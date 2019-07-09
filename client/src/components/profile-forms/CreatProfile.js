@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createProfile, getCurrentProfile } from '../../actions/profile';
 
-const Createprofile = props => {
+const CreateProfile = ({ createProfile, history }) => {
   const [formData, setFormData] = useState({
     company: '',
     website: '',
@@ -36,10 +36,10 @@ const Createprofile = props => {
   } = formData;
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  // const onSubmit = e => {
-  //   e.preventDefault();
-  //   createProfile(formData, history);
-  // };
+  const onSubmit = e => {
+    e.preventDefault();
+    createProfile(formData, history);
+  };
   // useEffect(() => {
   //   getCurrentProfile();
   //   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -60,7 +60,7 @@ const Createprofile = props => {
         profile stand out
       </p>
       <small>* = required field</small>
-      <form className="form">
+      <form className="form" onSubmit={e => onSubmit(e)}>
         <div className="form-group">
           <select name="status" value={status} onChange={e => onChange(e)}>
             <option value="0">* Select Professional Status</option>
@@ -226,15 +226,15 @@ const Createprofile = props => {
   );
 };
 
-Createprofile.propTypes = {
-  createProfile: PropTypes.func.isRequired,
-  getCurrentProfile: PropTypes.func.isRequired,
-  profile: PropTypes.object.isRequired
+CreateProfile.propTypes = {
+  createProfile: PropTypes.func.isRequired
+  //   getCurrentProfile: PropTypes.func.isRequired,
+  //   profile: PropTypes.object.isRequired
 };
-const mapStateToProps = state => ({
-  profile: state.profile
-});
+// const mapStateToProps = state => ({
+//   profile: state.profile
+// });
 export default connect(
-  mapStateToProps,
+  null,
   { createProfile, getCurrentProfile }
-)(withRouter(Createprofile));
+)(withRouter(CreateProfile));
