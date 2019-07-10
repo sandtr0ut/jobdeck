@@ -7,6 +7,9 @@ import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
 import Dashboard from './components/dashboard/Dashboard';
 import CreateProfile from './components/profile-forms/CreatProfile';
+import EditProfile from './components/profile-forms/EditProfile';
+import AddExperience from './components/profile-forms/AddExperience';
+import AddEducation from './components/profile-forms/AddEducation';
 import PrivateRoute from './components/routing/PrivateRoute';
 //Redux
 import { Provider } from 'react-redux';
@@ -20,7 +23,7 @@ if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
 
-//Pass empty array as second argument so effect only runs/gets cleaned-up once (on mount and unmount)
+//Pass empty array as second argument so useEffect only runs/gets cleaned-up once (on mount and unmount)
 //(See 'Note' under 'Using the Effect Hook' in React docs)
 const App = () => {
   useEffect(() => {
@@ -43,6 +46,21 @@ const App = () => {
                 exact
                 path="/create-profile"
                 component={CreateProfile}
+              />
+              <PrivateRoute
+                exact
+                path="/edit-profile"
+                component={EditProfile}
+              />
+              <PrivateRoute
+                exact
+                path="/add-experience"
+                component={AddExperience}
+              />
+              <PrivateRoute
+                exact
+                path="/add-education"
+                component={AddEducation}
               />
             </Switch>
           </section>
