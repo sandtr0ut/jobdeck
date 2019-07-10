@@ -7,10 +7,10 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
-// import DashboardActions from './DashboardActions';
+import DashboardActions from './DashboardActions';
 // import Experience from './Experience';
 // import Education from './Education';
-import { getCurrentProfile, deleteAccount } from '../../actions/profile';
+import { getCurrentProfile } from '../../actions/profile';
 
 // const Dashboard = props => {
 const Dashboard = ({
@@ -32,9 +32,8 @@ const Dashboard = ({
       </p>
       {profile !== null ? (
         <Fragment>
-          has
-          {/* <DashboardActions />
-          <Experience experience={profile.experience} />
+          <DashboardActions />
+          {/* <Experience experience={profile.experience} />
           <Education education={profile.education} />
 
           <div className="my-2">
