@@ -1,5 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import Upload from "../upload/Upload";
 
 const DashboardActions = () => {
   return (
@@ -16,6 +17,7 @@ const DashboardActions = () => {
       <Link to="/add-education" className="btn btn-light">
         <i className="fas fa-graduation-cap text-primary" /> Add Education
       </Link>
+      <Upload />
     </div>
   );
 };
