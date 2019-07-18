@@ -1,6 +1,6 @@
 {
-    "mongoURI": "mongodb+srv://sandtr0ut:gcro6636@cluster0-azhuz.mongodb.net/test?retryWrites=true&w=majority",
-    "jwtSecret": "secret",
-    "githubClientId": "",
-    "githubSecret": ""
+  "mongoURI": "mongodb+srv://sandtr0ut:gcro6636@cluster0-azhuz.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "secret",
+  "githubClientId": "",
+  "githubSecret": ""
 }

@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import React from "react";
+import { Link, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 const Landing = ({ isAuthenticated }) => {
   if (isAuthenticated) {
@@ -19,8 +19,9 @@ const Landing = ({ isAuthenticated }) => {
           </p>
           <div className="buttons">
             <Link to="/register" className="btn btn-primary">
-              Sign Up
+              Register
             </Link>
+
             <Link to="/login" className="btn btn-light">
               Login
             </Link>
