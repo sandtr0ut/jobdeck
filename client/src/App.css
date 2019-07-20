@@ -576,3 +576,35 @@
     }
   }
   
+
+.card {
+  width: 325px;
+  height: 325px
+}
+.card h1 {
+  color: #c4302b
+}
+.card h2 {
+  color: #0077b5
+}
+
+.custom-scrollbar {
+  /* height: 70px; */
+  overflow-y: scroll;
+}
+
+/* To style the document scrollbar, remove `.custom-scrollbar` */
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
