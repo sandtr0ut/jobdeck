@@ -28,10 +28,10 @@ let clicked = true;
 function dispCard(props) {
 
 
-    if (props.clicked !== true) {
-        return <CardFront onClick={this.handleclick}/> ;
-    }
-    return <CardBack /> ;
+    // if (props.clicked !== true) {
+    //     return <CardFront onClick={this.handleclick}/> ;
+    // }
+    // return <CardBack /> ;
 }
 
 export default dispCard;

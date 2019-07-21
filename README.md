@@ -27,11 +27,14 @@ jobDeck was created using React, Redux, MongoDB, Express, NodeJS, and Google Fir
 
 ### Getting Started
 
+![landing page](readmeMisc/landingpage.png)
+
 You can link to our hosted application here: 
 
 After arriving at the landing page, feel free to create your login account.
 
 ### Welcome Users!
+
 
 If you've registered as a professional seeking employment, you'll be asked to create your profile.
 
