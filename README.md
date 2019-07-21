@@ -25,11 +25,15 @@ jobDeck is an employee/employer matching site looking to pair Tech professionals
 ## Application Use
 
  ### Developer Use : 
-     `Clone Repo > Run 'npm i' in your terminal > 'npm run dev' to start software
-     `
+     `Clone Repo > Run 'npm i' in your terminal > 'npm run dev' to start software`
 
 ### Getting Started
 
 You can link to our hosted application here: 
 
+### Welcome Users!
+
+After arriving at the landing page, feel free to create your login account.
+
+Populate your new profile with relevant information including Skills, Work History, Location, etc. and even upload your Resume to be seen by recruiters.
 
