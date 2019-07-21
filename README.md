@@ -33,6 +33,8 @@ You can link to our hosted application here:
 
 After arriving at the landing page, feel free to create your login account.
 
+![create profile](readmeMisc/signup.png)
+
 ### Welcome Users!
 
 
