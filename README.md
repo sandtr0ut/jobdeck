@@ -4,7 +4,7 @@
 
 [insert logo]
 ![jobDeck Logo]
-(jobdeck/readmeMisc/logo.png)
+(./readmeMisc/logo.png)
 
 
 
