@@ -44,7 +44,11 @@ Populate your new profile with relevant information including Skills, Work Histo
 
 After finishing your profile, you'll be taken to the Dashboard, where you are just one click away from editing/exploring your own profile or from exploring relevant job posts.
 
+![dashboard](readmeMisc/dashboard.png)
+
 While you're logged in, feel free to leave a message on our "Post" forum.
+
+![posting forum](readmeMisc/forum.png)
 
 ### Welcome Recruiters!
 
