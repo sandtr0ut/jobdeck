@@ -18,9 +18,9 @@ import CardBack from './cardBack'
 
 
 function handleclick(){
-    if (clicked === true) {
-        this.setState = 
-    }
+    // if (clicked === true) {
+    //     this.setState = 
+    // }
 }
 
 let clicked = true;
