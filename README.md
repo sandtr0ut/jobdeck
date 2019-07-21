@@ -3,8 +3,7 @@
 ## Overview
 
 [insert logo]
-![jobDeck Logo]
-(readmeMisc/logo.png)
+![jobDeck Logo](readmeMisc/logo.png)
 
 
 
