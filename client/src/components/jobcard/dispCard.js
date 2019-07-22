@@ -16,22 +16,42 @@ import CardBack from './cardBack'
 // '../../actions/profile';
 
 
+class CardDisplay extends Component{
+    constructor(props){
+        super(props);
 
-function handleclick(){
-    // if (clicked === true) {
-    //     this.setState = 
-    // }
+        this.state={
+            card: front
+        }
+    }
+
+    toggleSide = () =>{
+        this.setState(state => ({card: back}))
+    }
 }
 
-let clicked = true;
 
-function dispCard(props) {
+// const dispCard = ({
 
 
-    // if (props.clicked !== true) {
-    //     return <CardFront onClick={this.handleclick}/> ;
-    // }
-    // return <CardBack /> ;
-}
+// })
 
-export default dispCard;
+// function handleclick() {
+//     // if (clicked === true) {
+//     //     this.setState = 
+//     // }
+// }
+
+// let clicked = true;
+
+// function dispCard(props) {
+
+//     // return <h1>Hello, {props}</h1>
+//     if (clicked !== true) {
+//         return <CardFront / > ;
+//         // return <CardFront onClick={this.handleclick}/> ;
+//     }
+//     return <CardBack / > ;
+// }
+
+// export default dispCard;
