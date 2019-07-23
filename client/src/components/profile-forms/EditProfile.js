@@ -7,6 +7,7 @@ import { createProfile, getCurrentProfile } from "../../actions/profile";
 import { FilePond } from "react-filepond";
 import "filepond/dist/filepond.min.css";
 import Upload from "../upload/Upload";
+import Aws3 from "../aws3/Aws3";
 
 const EditProfile = ({
   profile: { profile, loading },
@@ -194,6 +195,7 @@ const EditProfile = ({
               value={resume}
               onChange={e => onChange(e)}
             />
+            <Aws3 />
             Add Social Network Links
           </button>
           <span>Optional</span>

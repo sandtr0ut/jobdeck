@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-
+import React from "react";
+import { Link, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+// import Test from "../card/Card";
 const Landing = ({ isAuthenticated }) => {
   if (isAuthenticated) {
     return <Redirect to="/dashboard" />;
@@ -17,6 +17,7 @@ const Landing = ({ isAuthenticated }) => {
             Create a developer profile/portfolio, share posts and get help from
             other developers
           </p>
+          {/* <Test /> */}
           <div className="buttons">
             <Link to="/register" className="btn btn-primary">
               Sign Up

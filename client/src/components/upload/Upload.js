@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { FilePond } from "react-filepond";
 import "filepond/dist/filepond.min.css";
 
