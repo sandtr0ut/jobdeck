@@ -16,19 +16,19 @@ import CardBack from './cardBack'
 // '../../actions/profile';
 
 
-class CardDisplay extends Component{
-    constructor(props){
-        super(props);
+// class CardDisplay extends Component{
+//     constructor(props){
+//         super(props);
 
-        this.state={
-            card: front
-        }
-    }
+//         this.state={
+//             card: front
+//         }
+//     }
 
-    toggleSide = () =>{
-        this.setState(state => ({card: back}))
-    }
-}
+//     toggleSide = () =>{
+//         this.setState(state => ({card: back}))
+//     }
+// }
 
 
 // const dispCard = ({
@@ -54,4 +54,4 @@ class CardDisplay extends Component{
 //     return <CardBack / > ;
 // }
 
-// export default dispCard;
+export default dispCard;
