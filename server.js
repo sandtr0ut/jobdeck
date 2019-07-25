@@ -10,6 +10,7 @@ connectDB();
 app.use(express.json({ extended: false }));
 
 //Define Routes
+//    With these definitions, we only have to define what comes after the '/api/users..., etc. in our routes/api files
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/profile', require('./routes/api/profile'));

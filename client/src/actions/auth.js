@@ -21,7 +21,7 @@ export const loadUser = () => async dispatch => {
 
   try {
     const res = await axios.get('/api/auth');
-
+    // returns json object of user in payload
     dispatch({
       type: USER_LOADED,
       payload: res.data

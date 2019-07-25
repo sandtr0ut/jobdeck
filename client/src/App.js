@@ -21,6 +21,7 @@ const App = () => {
   useEffect(() => {
     store.dispatch(loadUser());
   }, []);
+  //the useEffect here updates the state with user's token, isAuthenticated = true, loading = false, and populates the fields of the user object
 
   return (
     <Provider store={store}>
