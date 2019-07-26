@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Card</title>
+    <meta name="theme-color" content="#000000" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link href="https://fonts.googleapis.com/css?family=Signika&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../App.css">
+    <link rel="stylesheet" href="card.css">
+
+
+</head>
+
+<script>
+    function myFunction() {
+        var x = document.getElementsByClassName("expand");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
+
+<body>
+    <div class="container">
+
+        <!-- <div class="profiles"> -->
+        <!-- <div class="jobcard"> -->
+        <div class="lead">
+            <div class="card">
+                <tbody>
+
+                    <div class="jobcard bg-light">
+                        <div class="jobcard-img">
+                            <img src="../../../../readmeMisc/Screen Shot 2019-07-20 at 8.52.18 PM.png" alt="">
+                        </div>
+                        <div>
+                            <img class="jobcard-logo" src="../../../../readmeMisc/logo.png" alt="" class="round-img" />
+                            <h2>Job Title</h2>
+                            <h3>Company Name</h3>
+                            <h3>$ Salary</h3>
+                            <p class="my-1"><span>Phoenix, AZ</span></p>
+                            <!-- <a class="btn btn-primary" type="checkbox" onclick="expand()">View Profile</a> -->
+                            <input id="toggle" class="toggle btn-primary" type="checkbox">
+                            <label for="toggle" class="btn btn-primary">Summary</label>
+                        </div>
+                        <div class="expand">
+                            <section>
+                                <p>
+
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione nam voluptates
+                                    architecto. Obcaecati delectus, libero voluptatum omnis ex labore nisi culpa,
+                                    quisquam dolor excepturi suscipit autem temporibus ab itaque aliquam! Lorem ipsum
+                                    dolor sit amet consectetur adipisicing elit. Quia dolor fugit adipisci nihil
+                                    assumenda veritatis earum ea, tempora maxime nobis, obcaecati, vel hic sapiente! Vel
+                                    labore fuga suscipit ullam voluptates.
+                                </p>
+                            </section>
+                        </div>
+                    </div>
+            </div>
+            </tbody>
+        </div>
+        <!-- </div> -->
+
+
+
+        <!-- <div class="jobcard">
+                <div class="profile bg-light">
+
+                    <div class="lead">
+
+                        <img src="../../../../readmeMisc/logo.png" alt="" class="round-img" />
+
+
+                        <div>
+                            <h2>test</h2>
+                            <p>Senior Developer <span> at Trilogy</span></p>
+                            <p class="my-1"><span>phoenix</span></p><a class="btn btn-primary"
+                                href="/profile/5d32453eae23361680eb83cb">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+/* Job jobcards */
+
+.jobcard {
+    display: grid;
+    /* grid-template-columns: 2fr 4fr 2fr; */
+    align-items: center;
+    grid-gap: 2rem;
+    padding: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    background-color: #17a2b8;
+    color: white;
+  }
+
+  .jobcard-logo{
+      width: 55px
+  }
+  
+  .btn-primary {
+    background-color: lime;
+    color: white;
+  }
+  
+  .jobcard-grid {
+    display: grid;
+    grid-template-areas:
+      "top top"
+      "about about"
+      "exp edu"
+      "github github";
+    grid-gap: 1rem;
+  }
+  
+  .jobcard-img{
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .jobcard-top {
+    grid-area: top;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .jobcard-top img {
+    width: 250px;
+  }
+  
+  .jobcard-top .icons a {
+    color: #fff;
+    margin: 0 0.3rem;
+  }
+  
+  .jobcard-top .icons a:hover {
+    color: var(--dark-color);
+  }
+  
+  .jobcard-about {
+    grid-area: about;
+    text-align: center;
+  }
+  
+  .jobcard-about .skills {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .jobcard-exp {
+    grid-area: exp;
+  }
+  
+  .jobcard-edu {
+    grid-area: edu;
+  }
+  
+  .jobcard-exp h2,
+  .jobcard-edu h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .jobcard-exp > div,
+  .jobcard-edu > div {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: #ccc 1px dotted;
+  }
+  
+  .jobcard-exp > div:last-child,
+  .jobcard-edu > div:last-child {
+    border: 0;
+  }
+  
+  .jobcard-exp p,
+  .jobcard-edu p {
+    margin: 0.5rem 0;
+  }
+  
+  .jobcard-github {
+    grid-area: github;
+  }
+  
+  .jobcard-github .repo {
+    display: flex;
+  }
+  
+  .jobcard-github .repo > div:first-child {
+    flex: 7;
+    flex-basis: 70%;
+  }
+  
+  .jobcard-github > div:last-child {
+    flex: 3;
+    flex-basis: 20%;
+  }
+
+  .profiles {
+    background-color: white;
+  }
+  
+  tbody {
+    background-color: #17a2b8;
+    color: white;
+  }
+  
+  .profile,
+  .post,
+  .profiles {
+    -webkit-animation: slide-fwd-center 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+    animation: slide-fwd-center 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  .expand {
+    height: 660px;
+    visibility: visible;
+    transition: height 0.5s;
+    /* background: url(http://placekitten.com/g/600/300); */
+    color: #FFF;
+  }
+  /* section {
+    padding: 0 20px;
+  } */
+  #toggle:checked  .expand {
+    height: 1350px;
+    visibility: visible;
+    
+  }
+  #toggle:checked ~ label::before {
+    align-content: center;
+    content: "-";
+    transform: rotate(49)
+  }
+  label::before {
+    font-family: Consolas, monaco, monospace;
+    font-weight: bold;
+    font-size: 15px;
+    content: "+";
+    vertical-align: text-top;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 3px;
+    /* background: radial-gradient(ellipse at center, #CCC 50%, transparent 50%); */
+  }
+
+  input[type='checkbox'] {
+    display: none;
+  }
