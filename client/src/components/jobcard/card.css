@@ -15,9 +15,10 @@
     border-radius: 2%
   }
 
-  .jobcard  i{
+  .label  i{
       /* border-radius: 50%;
        */
+       text-align: center;
        align-content: center
   }
 
@@ -196,7 +197,7 @@
   }
 
   label{
-    
+    text-align: center;
     /* display: grid; */
     grid-template-columns: 4fr;
     align-items: center;
