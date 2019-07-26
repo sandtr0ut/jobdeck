@@ -1,8 +1,10 @@
 /* Job jobcards */
 
+
+
 .jobcard {
     display: grid;
-    /* grid-template-columns: 2fr 4fr 2fr; */
+    grid-template-columns: 4fr;
     align-items: center;
     grid-gap: 2rem;
     padding: 1rem;
@@ -12,8 +14,17 @@
     color: white;
   }
 
+  .jobcard  img{
+      position: static
+  }
+
+  .jobcard  .btn{
+    width: 123px
+  }
+
   .jobcard-logo{
-      width: 55px
+      width: 15%;
+
   }
   
   .btn-primary {
@@ -33,7 +44,12 @@
   
   .jobcard-img{
     width: 100%;
+   max-height: 115pt;
     align-items: stretch;
+  }
+  .jobcard-content{
+    box-shadow: inset 0 0 1000px rgba(68, 68, 68, 0.9);
+    /* filter: grayscale(2px) */
   }
 
   .jobcard-top {
@@ -136,8 +152,8 @@
   }
 
   .expand {
-    height: 660px;
-    visibility: visible;
+    height: 0px;
+    visibility: hidden;
     transition: height 0.5s;
     /* background: url(http://placekitten.com/g/600/300); */
     color: #FFF;
@@ -145,29 +161,27 @@
   /* section {
     padding: 0 20px;
   } */
-  #toggle:checked  .expand {
+  #toggle:checked ~ .expand {
     height: 1350px;
     visibility: visible;
     
   }
   #toggle:checked ~ label::before {
     align-content: center;
-    content: "-";
+    /* content: "-"; */
     transform: rotate(49)
-  }
-  label::before {
-    font-family: Consolas, monaco, monospace;
-    font-weight: bold;
-    font-size: 15px;
-    content: "+";
-    vertical-align: text-top;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-right: 3px;
-    /* background: radial-gradient(ellipse at center, #CCC 50%, transparent 50%); */
   }
 
   input[type='checkbox'] {
     display: none;
+  }
+  label:hover {
+    color: #000;
+  }
+  
+  @media (max-width: 700px) {
+    .jobcard-content{
+        box-shadow: none;
+        
+      }
   }
