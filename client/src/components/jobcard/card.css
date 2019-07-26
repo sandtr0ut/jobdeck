@@ -15,11 +15,17 @@
     border-radius: 2%
   }
 
-  .label  i{
+  label  i{
       /* border-radius: 50%;
        */
        text-align: center;
-       align-content: center
+       align-content: center;
+       transition: 1s
+  }
+  label:hover i{
+      transition: 1s;
+      transform: scale(1.3);
+       
   }
 
   .jobcard  img{
@@ -163,13 +169,14 @@
   .expand {
     height: 0px;
     visibility: hidden;
-    transition: height 0.5s;
+    transition: height 1s;
     /* background: url(http://placekitten.com/g/600/300); */
     color: #FFF;
   }
   .expand  section {
     padding: 0 20px;
     font-size: 14pt;
+    transition: linear
   }
   #toggle:checked ~ .expand {
     height: 650px;
