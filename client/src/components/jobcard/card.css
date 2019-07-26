@@ -166,9 +166,10 @@
     /* background: url(http://placekitten.com/g/600/300); */
     color: #FFF;
   }
-  /* section {
+  .expand  section {
     padding: 0 20px;
-  } */
+    font-size: 14pt;
+  }
   #toggle:checked ~ .expand {
     height: 650px;
     visibility: visible;
