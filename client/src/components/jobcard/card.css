@@ -12,10 +12,18 @@
     margin-bottom: 1rem;
     background-color: #17a2b8;
     color: white;
+    border-radius: 2%
+  }
+
+  .jobcard  i{
+      /* border-radius: 50%;
+       */
+       align-content: center
   }
 
   .jobcard  img{
-      position: static
+      position: static;
+      border-radius: 2%
   }
 
   .jobcard  .btn{
@@ -162,19 +170,38 @@
     padding: 0 20px;
   } */
   #toggle:checked ~ .expand {
-    height: 1350px;
+    height: 650px;
     visibility: visible;
     
   }
-  #toggle:checked ~ label::before {
+  #toggle:checked ~ label::after {
     align-content: center;
     /* content: "-"; */
-    transform: rotate(49)
+    /* transform: rotate(4deg) */
+  }
+  #toggle:checked ~ label {
+    align-content: center;
+    /* content: "+"; */
+    /* transform: rotate(180deg) */
+  }
+  #toggle:checked ~ label  i {
+    align-content: center;
+    /* content: "+"; */
+    transform: rotate(180deg)
   }
 
   input[type='checkbox'] {
     display: none;
   }
+
+  label{
+    
+    /* display: grid; */
+    grid-template-columns: 4fr;
+    align-items: center;
+    width: 15%;
+  }
+
   label:hover {
     color: #000;
   }
