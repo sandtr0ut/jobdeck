@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { deleteExperience } from '../../actions/profile';
 
 const Experience = ({ experience, deleteExperience }) => {
+  // Adding unique key prop to each child/item in list
   const experiences = experience.map(exp => (
     <tr key={exp.id}>
       <td>{exp.company}</td>

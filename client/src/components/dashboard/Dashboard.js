@@ -46,8 +46,8 @@ const Dashboard = ({
             </button>
           </div>
 
-          <DashboardAdminActions />
           <AdminCompanies experience={profile.experience} />
+          <DashboardAdminActions />
         </Fragment>
       ) : (
         <Fragment>
