@@ -1,8 +1,8 @@
-import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { logout } from "../../actions/auth";
+import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { logout } from '../../actions/auth';
 // import { pathToFileURL } from 'url';
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
@@ -16,13 +16,19 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       </li>
       <li>
         <Link to="/dashboard">
-          <i className="fas fa-user" />{" "}
+          <i className="fas fa-user" />{' '}
           <span className="hide-sm">Dashboard</span>
         </Link>
       </li>
       <li>
+        <Link to="/comprofiles">Companies</Link>
+      </li>
+      <li>
+        <Link to="/jobposts">Job-Posts</Link>
+      </li>
+      <li>
         <a onClick={logout} href="#!">
-          <i className="fas fa-sign-out-alt" />{" "}
+          <i className="fas fa-sign-out-alt" />{' '}
           <span className="hide-sm">Logout</span>
         </a>
       </li>

@@ -8,9 +8,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import DashboardActions from './DashboardActions';
+import DashboardAdminActions from './DashboardAdminActions';
 import Experience from './Experience';
 import Education from './Education';
 import { getCurrentProfile, deleteAccount } from '../../actions/profile';
+import AdminCompanies from './AdminCompanies';
 
 // const Dashboard = props => {
 const Dashboard = ({
@@ -43,6 +45,9 @@ const Dashboard = ({
               <i className="fas fa-user-minus" /> Delete My Account
             </button>
           </div>
+
+          <DashboardAdminActions />
+          <AdminCompanies experience={profile.experience} />
         </Fragment>
       ) : (
         <Fragment>

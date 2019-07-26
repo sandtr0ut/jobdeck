@@ -7,14 +7,14 @@ import {
   DELETE_JOBPOST,
   ADD_JOBPOST,
   GET_JOBPOST,
-  ADD_COMMENT,
-  REMOVE_COMMENT
+  ADD_JOBCOMMENT,
+  REMOVE_JOBCOMMENT
 } from './types';
 
-// Get posts
-export const getPosts = () => async dispatch => {
+// Get job posts
+export const getJobPosts = () => async dispatch => {
   try {
-    const res = await axios.get('/api/posts');
+    const res = await axios.get('/api/jobposts');
 
     dispatch({
       type: GET_JOBPOSTS,
@@ -28,14 +28,14 @@ export const getPosts = () => async dispatch => {
   }
 };
 
-// Add like
-export const addLike = id => async dispatch => {
+// Add job like
+export const addJobLike = id => async dispatch => {
   try {
-    const res = await axios.put(`/api/posts/like/${id}`);
+    const res = await axios.put(`/api/posts/joblike/${id}`);
 
     dispatch({
       type: UPDATE_JOBLIKES,
-      payload: { id, likes: res.data }
+      payload: { id, joblikes: res.data }
     });
   } catch (err) {
     dispatch({
@@ -45,14 +45,14 @@ export const addLike = id => async dispatch => {
   }
 };
 
-// Remove like
-export const removeLike = id => async dispatch => {
+// Remove job like
+export const removeJobLike = id => async dispatch => {
   try {
-    const res = await axios.put(`/api/posts/unlike/${id}`);
+    const res = await axios.put(`/api/jobposts/unlike/${id}`);
 
     dispatch({
       type: UPDATE_JOBLIKES,
-      payload: { id, likes: res.data }
+      payload: { id, joblikes: res.data }
     });
   } catch (err) {
     dispatch({
@@ -62,17 +62,17 @@ export const removeLike = id => async dispatch => {
   }
 };
 
-// Delete post
-export const deletePost = id => async dispatch => {
+// Delete job post
+export const deleteJobPost = id => async dispatch => {
   try {
-    await axios.delete(`/api/posts/${id}`);
+    await axios.delete(`/api/jobposts/${id}`);
 
     dispatch({
       type: DELETE_JOBPOST,
       payload: id
     });
 
-    dispatch(setAlert('Post Removed', 'success'));
+    dispatch(setAlert('Job Post Removed', 'success'));
   } catch (err) {
     dispatch({
       type: JOBPOST_ERROR,
@@ -81,8 +81,8 @@ export const deletePost = id => async dispatch => {
   }
 };
 
-// Add post
-export const addPost = formData => async dispatch => {
+// Add job post
+export const addJobPost = formData => async dispatch => {
   const config = {
     headers: {
       'Content-Type': 'application/json'
@@ -90,14 +90,14 @@ export const addPost = formData => async dispatch => {
   };
 
   try {
-    const res = await axios.post('/api/posts', formData, config);
+    const res = await axios.post('/api/jobposts', formData, config);
 
     dispatch({
       type: ADD_JOBPOST,
       payload: res.data
     });
 
-    dispatch(setAlert('Post Created', 'success'));
+    dispatch(setAlert('Job Post Created', 'success'));
   } catch (err) {
     dispatch({
       type: JOBPOST_ERROR,
@@ -106,10 +106,10 @@ export const addPost = formData => async dispatch => {
   }
 };
 
-// Get post
-export const getPost = id => async dispatch => {
+// Get job post
+export const getJobPost = id => async dispatch => {
   try {
-    const res = await axios.get(`/api/posts/${id}`);
+    const res = await axios.get(`/api/jobposts/${id}`);
 
     dispatch({
       type: GET_JOBPOST,
@@ -123,8 +123,8 @@ export const getPost = id => async dispatch => {
   }
 };
 
-// Add comment
-export const addComment = (postId, formData) => async dispatch => {
+// Add job comment
+export const addJobComment = (jobPostId, formData) => async dispatch => {
   const config = {
     headers: {
       'Content-Type': 'application/json'
@@ -133,13 +133,13 @@ export const addComment = (postId, formData) => async dispatch => {
 
   try {
     const res = await axios.post(
-      `/api/posts/comment/${postId}`,
+      `/api/jobposts/jobcomment/${jobPostId}`,
       formData,
       config
     );
 
     dispatch({
-      type: ADD_COMMENT,
+      type: ADD_JOBCOMMENT,
       payload: res.data
     });
 
@@ -152,14 +152,14 @@ export const addComment = (postId, formData) => async dispatch => {
   }
 };
 
-// Delete comment
-export const deleteComment = (postId, commentId) => async dispatch => {
+// Delete job comment
+export const deleteJobComment = (jobPostId, jobCommentId) => async dispatch => {
   try {
-    await axios.delete(`/api/posts/comment/${postId}/${commentId}`);
+    await axios.delete(`/api/posts/comment/${jobPostId}/${jobCommentId}`);
 
     dispatch({
-      type: REMOVE_COMMENT,
-      payload: commentId
+      type: REMOVE_JOBCOMMENT,
+      payload: jobCommentId
     });
 
     dispatch(setAlert('Comment Removed', 'success'));
