@@ -38,7 +38,8 @@
   }
 
   .jobcard-logo{
-      width: 15%;
+    width: 15%;
+    /* max-height: 35px; */
 
   }
   
