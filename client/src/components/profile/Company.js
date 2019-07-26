@@ -30,12 +30,12 @@ const Profile = ({
             Back To Profiles
           </Link>
           <Link to="/company" className="btn btn-light">
-            Create Company Profile
+            My User profile
           </Link>
           {auth.isAuthenticated &&
             auth.loading === false &&
             auth.user._id === profile.user._id && (
-              <Link to="/edit-profile" className="btn btn-dark">
+              <Link to="/edit-profile2" className="btn btn-dark">
                 Edit Profile
               </Link>
             )}
@@ -43,14 +43,11 @@ const Profile = ({
             <ProfileTop profile={profile} />
             <ProfileAbout profile={profile} />
             <div className="profile-exp bg-white p-2">
-              <h2 className="text-primary">Experience</h2>
-              {profile.experience.length > 0 ? (
+              <h2 className="text-primary">Bio</h2>
+              {profile.bio.length > 0 ? (
                 <Fragment>
-                  {profile.experience.map(experience => (
-                    <ProfileExperience
-                      key={experience._id}
-                      experience={experience}
-                    />
+                  {profile.bio.map(bio => (
+                    <ProfileExperience key={bio._id} experience={bio} />
                   ))}
                 </Fragment>
               ) : (
@@ -59,14 +56,11 @@ const Profile = ({
             </div>
 
             <div className="profile-edu bg-white p-2">
-              <h2 className="text-primary">Education</h2>
+              <h2 className="text-primary">Location</h2>
               {profile.education.length > 0 ? (
                 <Fragment>
-                  {profile.education.map(education => (
-                    <ProfileEducation
-                      key={education._id}
-                      education={education}
-                    />
+                  {profile.location.map(location => (
+                    <ProfileEducation key={location._id} location={location} />
                   ))}
                 </Fragment>
               ) : (
