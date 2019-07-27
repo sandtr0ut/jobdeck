@@ -6,6 +6,7 @@ import { register } from '../../actions/auth';
 import PropTypes from 'prop-types';
 
 const Register = ({ setAlert, register, isAuthenticated }) => {
+  // formData = state, setFormData = function to set state
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -13,9 +14,11 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     password2: ''
   });
 
+  // Destructure
   const { name, email, password, password2 } = formData;
 
   const onChange = e =>
+    // e.target.name is the name attribute, NOT formData.name
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = async e => {

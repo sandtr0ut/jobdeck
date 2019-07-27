@@ -18,24 +18,22 @@ const ComProfileSchema = new mongoose.Schema({
     type: String
   },
   tagline: {
-    type: String,
-    required: true
+    type: String
   },
   industries: {
-    type: [String],
-    required: true
+    type: [String]
   },
   description: {
     type: String
   },
-  comlikes: [
-    {
-      user: {
-        type: Schema.Types.ObjectId,
-        ref: 'users'
-      }
-    }
-  ],
+  //   comlikes: [
+  //     {
+  //       user: {
+  //         type: Schema.Types.ObjectId,
+  //         ref: 'users'
+  //       }
+  //     }
+  //   ],
   social: {
     youtube: {
       type: String
