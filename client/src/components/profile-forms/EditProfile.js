@@ -4,10 +4,6 @@ import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createProfile, getCurrentProfile } from "../../actions/profile";
-import { FilePond } from "react-filepond";
-import "filepond/dist/filepond.min.css";
-import Upload from "../upload/Upload";
-import Aws3 from "../aws3/Aws3";
 
 const EditProfile = ({
   profile: { profile, loading },
@@ -23,7 +19,6 @@ const EditProfile = ({
     skills: "",
     githubusername: "",
     bio: "",
-    resume: "",
     twitter: "",
     facebook: "",
     linkedin: "",
@@ -44,7 +39,6 @@ const EditProfile = ({
       githubusername:
         loading || !profile.githubusername ? "" : profile.githubusername,
       bio: loading || !profile.bio ? "" : profile.bio,
-      resume: loading || !profile.resume ? "" : profile.resume,
       twitter: loading || !profile.social ? "" : profile.social.twitter,
       facebook: loading || !profile.social ? "" : profile.social.facebook,
       linkedin: loading || !profile.social ? "" : profile.social.linkedin,
@@ -62,7 +56,6 @@ const EditProfile = ({
     skills,
     githubusername,
     bio,
-    resume,
     twitter,
     facebook,
     linkedin,
@@ -189,13 +182,6 @@ const EditProfile = ({
             type="button"
             className="btn btn-light"
           >
-            <Upload name="resume" value={resume} onChange={e => onChange(e)} />
-            <FilePond
-              name="resume"
-              value={resume}
-              onChange={e => onChange(e)}
-            />
-            <Aws3 />
             Add Social Network Links
           </button>
           <span>Optional</span>
