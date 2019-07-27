@@ -8,14 +8,15 @@ import { getComProfileById } from '../../actions/comprofile';
 
 const ComAccounts = ({
   getComProfileById,
-  comprofile: { comprofile, loading }
+  comprofile: { comprofile, loading },
+  auth: { user: { _id } }
 }) => {
   useEffect(() => {
-    getComProfileById();
-  }, [getComProfileById]);
+    getComProfileById(_id);
+    // eslint-disable-next-line
+  }, [_id]);
 
-  // Adding unique key prop to each child/item in list
-  const comprofiles = comprofile.map(comp => (
+  const displayComProfile = comp => (
     <tr key={comp.id}>
       <td>{comp.companyname}</td>
       <td className="hide-sm">{comp.location}</td>
@@ -33,7 +34,13 @@ const ComAccounts = ({
         </button> */}
       </td>
     </tr>
-  ));
+  )
+
+
+  // Adding unique key prop to eac  h child/item in list
+  const comprofiles = comprofile && (comprofile.constructor === Array ? comprofile.map(displayComProfile) : displayComProfile(comprofile));
+
+  console.log('comprofiles',comprofiles)
 
   return (
     <Fragment>
@@ -66,7 +73,8 @@ ComAccounts.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  comprofile: state.comprofile
+  comprofile: state.comprofile,
+  auth: state.auth
 });
 
 export default connect(

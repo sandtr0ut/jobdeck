@@ -46,7 +46,7 @@ const Dashboard = ({
             </button>
           </div>
 
-          {/* <ComAccounts /> */}
+          <ComAccounts />
           <DashboardAdminActions />
         </Fragment>
       ) : (

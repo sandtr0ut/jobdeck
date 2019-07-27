@@ -15,19 +15,20 @@ const initialState = {
 
 export default function(state = initialState, action) {
   const { type, payload } = action;
+  console.log('payload',payload);
 
   switch (type) {
     case GET_COMPROFILE:
       // case UPDATE_COMPROFILE:
       return {
         ...state,
-        profile: payload,
+        comprofile: payload,
         loading: false
       };
     case GET_COMPROFILES:
       return {
         ...state,
-        profiles: payload,
+        comprofiles: payload,
         loading: false
       };
 
@@ -40,7 +41,7 @@ export default function(state = initialState, action) {
     case CLEAR_COMPROFILE:
       return {
         ...state,
-        profile: null,
+        comprofile: null,
         repos: [],
         loading: false
       };

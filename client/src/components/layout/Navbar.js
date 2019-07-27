@@ -21,6 +21,10 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         </Link>
       </li>
       <li>
+        <Link to="/comregister">Register Company</Link>
+      </li>
+
+      <li>
         <Link to="/comprofiles">Companies</Link>
       </li>
       <li>
@@ -41,9 +45,6 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       </li>
       <li>
         <Link to="/register">Register</Link>
-      </li>
-      <li>
-        <Link to="/comregister">Register Company</Link>
       </li>
       <li>
         <Link to="/login">Login</Link>
