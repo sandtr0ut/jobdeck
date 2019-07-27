@@ -1,29 +1,20 @@
-import React, { Fragment, useState, useEffect } from "react";
-import { Link, withRouter } from "react-router-dom";
+import React, { useState, Fragment } from "react";
+import { withRouter } from "react-router-dom";
 // import { Link, withRouter, Redirect } from 'react-router-dom';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createProfile, getCurrentProfile } from "../../actions/profile";
-import { FilePond } from "react-filepond";
-import "filepond/dist/filepond.min.css";
-import Upload from "../upload/Upload";
-import Aws3 from "../aws3/Aws3";
 
-const EditProfile = ({
-  profile: { profile, loading },
-  createProfile,
-  getCurrentProfile,
-  history
-}) => {
+const CreateProfile = ({ createProfile, history }) => {
   const [formData, setFormData] = useState({
     company: "",
+    hasCompany: "",
     website: "",
     location: "",
     status: "",
     skills: "",
     githubusername: "",
     bio: "",
-    resume: "",
     twitter: "",
     facebook: "",
     linkedin: "",
@@ -31,29 +22,6 @@ const EditProfile = ({
     instagram: ""
   });
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
-
-  useEffect(() => {
-    getCurrentProfile();
-
-    setFormData({
-      company: loading || !profile.company ? "" : profile.company,
-      website: loading || !profile.website ? "" : profile.website,
-      location: loading || !profile.location ? "" : profile.location,
-      status: loading || !profile.status ? "" : profile.status,
-      skills: loading || !profile.skills ? "" : profile.skills.join(","),
-      githubusername:
-        loading || !profile.githubusername ? "" : profile.githubusername,
-      bio: loading || !profile.bio ? "" : profile.bio,
-      resume: loading || !profile.resume ? "" : profile.resume,
-      twitter: loading || !profile.social ? "" : profile.social.twitter,
-      facebook: loading || !profile.social ? "" : profile.social.facebook,
-      linkedin: loading || !profile.social ? "" : profile.social.linkedin,
-      youtube: loading || !profile.social ? "" : profile.social.youtube,
-      instagram: loading || !profile.social ? "" : profile.social.instagram
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [loading, getCurrentProfile]);
-
   const {
     company,
     website,
@@ -62,7 +30,6 @@ const EditProfile = ({
     skills,
     githubusername,
     bio,
-    resume,
     twitter,
     facebook,
     linkedin,
@@ -73,11 +40,12 @@ const EditProfile = ({
     setFormData({ ...formData, [e.target.name]: e.target.value });
   const onSubmit = e => {
     e.preventDefault();
-    createProfile(formData, history, true);
+    createProfile(formData, history);
   };
+
   // useEffect(() => {
   //   getCurrentProfile();
-
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
   // }, [getCurrentProfile]);
 
   //   return loading && profile === null ? (
@@ -89,7 +57,7 @@ const EditProfile = ({
   //   );
   return (
     <Fragment>
-      <h1 className="large text-primary">Create Your Profile</h1>
+      <h1 className="large text-primary">Create Company Profile</h1>
       <p className="lead">
         <i className="fas fa-user" /> Let's get some information to make your
         profile stand out
@@ -99,7 +67,7 @@ const EditProfile = ({
         <div className="form-group">
           <select name="status" value={status} onChange={e => onChange(e)}>
             <option value="0">* Select Professional Status</option>
-            <option value="Developer">Developer</option>
+            <option value="Developer">Recruiter</option>
             <option value="Junior Developer">Junior Developer</option>
             <option value="Senior Developer">Senior Developer</option>
             <option value="Manager">Manager</option>
@@ -119,6 +87,7 @@ const EditProfile = ({
             name="company"
             value={company}
             onChange={e => onChange(e)}
+            // {hasCompany={company !== "" ? hasCompany = true : console.log(hasCompany)}
           />
           <small className="form-text">
             Could be your own company or one you work for
@@ -180,7 +149,9 @@ const EditProfile = ({
             value={bio}
             onChange={e => onChange(e)}
           />
-          <small className="form-text">Tell us a little about yourself</small>
+          <small className="form-text">
+            Tell us a little about your company
+          </small>
         </div>
 
         <div className="my-2">
@@ -189,13 +160,6 @@ const EditProfile = ({
             type="button"
             className="btn btn-light"
           >
-            <Upload name="resume" value={resume} onChange={e => onChange(e)} />
-            <FilePond
-              name="resume"
-              value={resume}
-              onChange={e => onChange(e)}
-            />
-            <Aws3 />
             Add Social Network Links
           </button>
           <span>Optional</span>
@@ -260,23 +224,23 @@ const EditProfile = ({
         )}
 
         <input type="submit" className="btn btn-primary my-1" />
-        <Link className="btn btn-light my-1" to="/dashboard">
+        <a className="btn btn-light my-1" href="dashboard.html">
           Go Back
-        </Link>
+        </a>
       </form>
     </Fragment>
   );
 };
 
-EditProfile.propTypes = {
-  createProfile: PropTypes.func.isRequired,
-  getCurrentProfile: PropTypes.func.isRequired,
-  profile: PropTypes.object.isRequired
+CreateProfile.propTypes = {
+  createProfile: PropTypes.func.isRequired
+  //   getCurrentProfile: PropTypes.func.isRequired,
+  //   profile: PropTypes.object.isRequired
 };
-const mapStateToProps = state => ({
-  profile: state.profile
-});
+// const mapStateToProps = state => ({
+//   profile: state.profile
+// });
 export default connect(
-  mapStateToProps,
+  null,
   { createProfile, getCurrentProfile }
-)(withRouter(EditProfile));
+)(withRouter(CreateProfile));

@@ -14,7 +14,9 @@
 }
 
 body {
+
   font-family: "Signika", sans-serif;
+
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;
@@ -312,6 +314,8 @@ button {
   top: 0;
   border-bottom: solid 1px var(--primary-color);
   opacity: 0.9;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
   background-color: #17a2b8;
 }
 
@@ -326,6 +330,7 @@ button {
 }
 
 .navbar a:hover {
+
   color: greenyellow;
 }
 
@@ -361,6 +366,7 @@ button {
   padding: 1rem;
   line-height: 1.8;
   margin-bottom: 1rem;
+
   background-color: #17a2b8;
   color: white;
 }
@@ -471,6 +477,7 @@ button {
   grid-template-columns: 1fr 4fr;
   grid-gap: 2rem;
   align-items: center;
+
   background-color: #17a2b8;
   color: white;
 }
@@ -589,6 +596,7 @@ button {
 
   
 }
+
 
 .profiles {
   background-color: white;
