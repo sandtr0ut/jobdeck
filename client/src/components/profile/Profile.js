@@ -32,6 +32,7 @@ const Profile = ({
           <Link to="/company" className="btn btn-light">
             Create Company Profile
           </Link>
+          {/*{user.isCompany === true ? (<CompanyFrag/>) : displayNone}*/}
           {auth.isAuthenticated &&
             auth.loading === false &&
             auth.user._id === profile.user._id && (

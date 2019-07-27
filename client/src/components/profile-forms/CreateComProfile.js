@@ -8,6 +8,7 @@ import { createProfile, getCurrentProfile } from "../../actions/profile";
 const CreateProfile = ({ createProfile, history }) => {
   const [formData, setFormData] = useState({
     company: "",
+    hasCompany: "",
     website: "",
     location: "",
     status: "",
@@ -41,6 +42,7 @@ const CreateProfile = ({ createProfile, history }) => {
     e.preventDefault();
     createProfile(formData, history);
   };
+
   // useEffect(() => {
   //   getCurrentProfile();
   //   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -55,7 +57,7 @@ const CreateProfile = ({ createProfile, history }) => {
   //   );
   return (
     <Fragment>
-      <h1 className="large text-primary">Create Your Profile</h1>
+      <h1 className="large text-primary">Create Company Profile</h1>
       <p className="lead">
         <i className="fas fa-user" /> Let's get some information to make your
         profile stand out
@@ -65,7 +67,7 @@ const CreateProfile = ({ createProfile, history }) => {
         <div className="form-group">
           <select name="status" value={status} onChange={e => onChange(e)}>
             <option value="0">* Select Professional Status</option>
-            <option value="Developer">Developer</option>
+            <option value="Developer">Recruiter</option>
             <option value="Junior Developer">Junior Developer</option>
             <option value="Senior Developer">Senior Developer</option>
             <option value="Manager">Manager</option>
@@ -85,6 +87,7 @@ const CreateProfile = ({ createProfile, history }) => {
             name="company"
             value={company}
             onChange={e => onChange(e)}
+            // {hasCompany={company !== "" ? hasCompany = true : console.log(hasCompany)}
           />
           <small className="form-text">
             Could be your own company or one you work for
@@ -146,7 +149,9 @@ const CreateProfile = ({ createProfile, history }) => {
             value={bio}
             onChange={e => onChange(e)}
           />
-          <small className="form-text">Tell us a little about yourself</small>
+          <small className="form-text">
+            Tell us a little about your company
+          </small>
         </div>
 
         <div className="my-2">

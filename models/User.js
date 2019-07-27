@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -22,9 +22,9 @@ const UserSchema = new mongoose.Schema({
     default: Date.now
   },
   hasCompany: {
-     type: Boolean,
-     default: false
+    type: Boolean,
+    default: false
   }
 });
 
-module.exports = User = mongoose.model('user', UserSchema);
+module.exports = User = mongoose.model("user", UserSchema);
