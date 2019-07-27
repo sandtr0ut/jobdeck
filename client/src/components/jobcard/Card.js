@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+// import CardBtn from "../CardBtn";
 import BackgroundImg from './demo-resources/imgs/nastuhabootalebiyWwob8kwOCkunsplash.jpg'
 import LogoImg from './demo-resources/imgs/logo.png'
 
@@ -21,7 +22,7 @@ const Card = ({
                         <div className="jobcard-img">
                             <img src={BackgroundImg} alt />
 
-                            
+
                         </div>
                         <div className="jobcard-content">
                             <div className="logo"> <img className="jobcard-logo round-img" src={LogoImg} alt /></div>
@@ -36,9 +37,20 @@ const Card = ({
                         <label htmlFor="toggle" className="btn btn-primary">
                             <i className="fas fa-arrow-circle-down fa-3x" />
                         </label>
+{/* 
+                        <input id="toggleheart" className="toggle btn-primary" type="checkbox" />
+                        <label htmlFor="toggleheart" className="btn btn-primary">
+                            <i class="far fa-heart fa-5x"></i>
+                        </label>
+                        <input id="toggleX" className="toggle btn-primary" type="checkbox" />
+                        <label htmlFor="toggleX" className="btn btn-primary">
+                            <i class="fas fa-times-circle fa-5x"></i>
+                        </label> */}
+
                         <div className="expand">
                             <section>
                                 <h2>Example Job</h2>
+                                <h3>Summary</h3>
                                 <p>
                                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione nam voluptates
                                     architecto. Obcaecati delectus, libero voluptatum omnis ex labore nisi culpa,
@@ -53,7 +65,8 @@ const Card = ({
                 </div>
             </div>
 
-        </div >)}
+        </div >)
+}
 
 
 export default Card;

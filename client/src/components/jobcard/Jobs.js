@@ -5,7 +5,15 @@ import Spinner from '../layout/Spinner';
 import Card from './Card';
 import { getProfiles } from '../../actions/profile';
 
-const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
+class Jobs extends Component {
+  state ={
+    BackgroundImg: "",
+    
+
+  }
+}
+
+const Jobs = ({ getProfiles, profile: { profiles, loading } }) => {
   useEffect(() => {
     getProfiles();
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -365,10 +365,7 @@ button {
   color: white;
 }
 
-.btn-primary {
-  background-color: lime;
-  color: white;
-}
+
 
 /* Profile Page */
 .profile-grid {
@@ -841,6 +838,7 @@ tbody {
 
 input[type='checkbox'] {
   display: none;
+  
 }
 
 label{
