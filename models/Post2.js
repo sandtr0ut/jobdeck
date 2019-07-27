@@ -2,29 +2,26 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const PostSchema2 = new Schema({
-  user: {
+  jobId: {
     type: Schema.Types.ObjectId,
     ref: "users2"
   },
-  text: {
+  jobTitle: {
     type: String,
     required: true
   },
-  name: {
+  salary: {
     type: String
   },
-  avatar: {
+  company: {
     type: String
   },
-  likes: [
+  location: 
     {
-      user: {
-        type: Schema.Types.ObjectId,
-        ref: "users"
-      }
+      type: String
     }
-  ],
-  comments: [
+  ,
+  summary: [
     {
       user: {
         type: Schema.Types.ObjectId,

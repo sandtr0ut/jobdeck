@@ -1,11 +1,275 @@
-.card {
-    width: 355px;
-}
+/* Job jobcards */
 
-.triangle {
-    width: 0;
-    height: 0;
-    border-top: 20px solid #333;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
+
+
+.jobcard {
+    display: grid;
+    grid-template-columns: 4fr;
+    align-items: center;
+    grid-gap: 2rem;
+    padding: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    background-color: #17a2b8;
+    color: white;
+    border-radius: 2%
+  }
+
+  label  i{
+      /* border-radius: 50%;
+       */
+       text-align: center;
+       align-content: center;
+       transition: 1s
+  }
+  label:hover i{
+      transition: 1s;
+      transform: scale(1.3);
+       
+  }
+
+  .jobcard  img{
+      position: static;
+      border-radius: 2%
+  }
+
+  .jobcard  .btn{
+    width: 123px
+  }
+
+  .jobcard-logo{
+    width: 15%;
+    /* max-height: 35px; */
+
+  }
+  
+  .btn-primary {
+    background-color: lime;
+    color: white;
+  }
+  
+  .jobcard-grid {
+    display: grid;
+    grid-template-areas:
+      "top top"
+      "about about"
+      "exp edu"
+      "github github";
+    grid-gap: 1rem;
+  }
+  
+  .jobcard-img{
+    width: 100%;
+   max-height: 115pt;
+    align-items: stretch;
+  }
+  .jobcard-content{
+    box-shadow: inset 0 0 1000px rgba(68, 68, 68, 0.9);
+    /* filter: grayscale(2px) */
+  }
+
+  .jobcard-top {
+    grid-area: top;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .jobcard-top img {
+    width: 250px;
+  }
+  
+  .jobcard-top .icons a {
+    color: #fff;
+    margin: 0 0.3rem;
+  }
+  
+  .jobcard-top .icons a:hover {
+    color: var(--dark-color);
+  }
+  
+  .jobcard-about {
+    grid-area: about;
+    text-align: center;
+  }
+  
+  .jobcard-about .skills {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .jobcard-exp {
+    grid-area: exp;
+  }
+  
+  .jobcard-edu {
+    grid-area: edu;
+  }
+  
+  .jobcard-exp h2,
+  .jobcard-edu h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .jobcard-exp > div,
+  .jobcard-edu > div {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: #ccc 1px dotted;
+  }
+  
+  .jobcard-exp > div:last-child,
+  .jobcard-edu > div:last-child {
+    border: 0;
+  }
+  
+  .jobcard-exp p,
+  .jobcard-edu p {
+    margin: 0.5rem 0;
+  }
+  
+  .jobcard-github {
+    grid-area: github;
+  }
+  
+  .jobcard-github .repo {
+    display: flex;
+  }
+  
+  .jobcard-github .repo > div:first-child {
+    flex: 7;
+    flex-basis: 70%;
+  }
+  
+  .jobcard-github > div:last-child {
+    flex: 3;
+    flex-basis: 20%;
+  }
+
+  .profiles {
+    background-color: white;
+  }
+  
+  tbody {
+    background-color: #17a2b8;
+    color: white;
+  }
+  
+  .profile,
+  .post,
+  .profiles {
+    -webkit-animation: slide-fwd-center 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+    animation: slide-fwd-center 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  .expand {
+    height: 0px;
+    visibility: hidden;
+    transition: height 1s;
+    /* background: url(http://placekitten.com/g/600/300); */
+    color: #FFF;
+  }
+  .expand  section {
+    padding: 0 20px;
+    font-size: 14pt;
+    transition: linear
+  }
+  #toggle:checked ~ .expand {
+    height: 650px;
+    visibility: visible;
+    
+  }
+  #toggle:checked ~ label::after {
+    align-content: center;
+    /* content: "-"; */
+    /* transform: rotate(4deg) */
+  }
+  #toggle:checked ~ label {
+    align-content: center;
+    /* content: "+"; */
+    /* transform: rotate(180deg) */
+  }
+  #toggle:checked ~ label  i {
+    align-content: center;
+    /* content: "+"; */
+    transform: rotate(180deg)
+  }
+
+  input[type='checkbox'] {
+    display: none;
+  }
+
+  label{
+    text-align: center;
+    /* display: grid; */
+    grid-template-columns: 4fr;
+    align-items: center;
+    width: 15%;
+  }
+
+  label:hover {
+    color: #000;
+  }
+  
+  @media (max-width: 700px) {
+    .jobcard-content{
+        box-shadow: none;
+        
+      }
+  }
+
+  .card-btn {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    border: none;
+    bottom: 10%;
+    color: #FFF;
+    font-size: 24px;
+    cursor: pointer;
+    font-family: FontAwesome;
+    outline: none;
+  }
+  
+  .pass {
+    left: 1%;
+    background: #E53935;
+  }
+  
+  .pass::after {
+    /* content: "\f165"; */
+  }
+  
+  .pick {
+    right: 1%;
+    background: #43A047;
+  }
+  
+  .pick::after {
+    /* content: "\f164"; */
+  }
+  
+  .pick:hover::after, .pass:hover::after {
+    animation: iconBounce .57s 1;
+  }
+  
+  @keyframes iconBounce {
+    0% {
+      font-size: 24px;
+    }
+    
+     50% {
+      font-size: 28px;
+    }
+    
+    100% {
+      font-size: 24px;
+    }
+  
   }
