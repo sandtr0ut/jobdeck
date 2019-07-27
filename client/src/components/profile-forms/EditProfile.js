@@ -4,7 +4,6 @@ import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createProfile, getCurrentProfile } from "../../actions/profile";
-import "filepond/dist/filepond.min.css";
 
 const EditProfile = ({
   profile: { profile, loading },
@@ -20,7 +19,6 @@ const EditProfile = ({
     skills: "",
     githubusername: "",
     bio: "",
-    resume: "",
     twitter: "",
     facebook: "",
     linkedin: "",
@@ -41,7 +39,6 @@ const EditProfile = ({
       githubusername:
         loading || !profile.githubusername ? "" : profile.githubusername,
       bio: loading || !profile.bio ? "" : profile.bio,
-      resume: loading || !profile.resume ? "" : profile.resume,
       twitter: loading || !profile.social ? "" : profile.social.twitter,
       facebook: loading || !profile.social ? "" : profile.social.facebook,
       linkedin: loading || !profile.social ? "" : profile.social.linkedin,
