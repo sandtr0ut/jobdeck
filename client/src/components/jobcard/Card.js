@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import BackgroundImg from './demo-resources/imgs/nastuhabootalebiyWwob8kwOCkunsplash.jpg'
+import LogoImg from './demo-resources/imgs/logo.png'
 
 const Card = ({
     // cardContents: {
@@ -18,12 +19,12 @@ const Card = ({
                 <div className="card">
                     <div className="jobcard bg-light">
                         <div className="jobcard-img">
-                            {/* <img src="../../../../demo-resources/imgs/nastuh-abootalebi-yWwob8kwOCk-unsplash.jpg" alt /> */}
+                            <img src={BackgroundImg} alt />
 
-                            <BackgroundImg />
+                            
                         </div>
                         <div className="jobcard-content">
-                            <div className="logo"> <img className="jobcard-logo round-img" src="../../../../readmeMisc/logo.png" alt /></div>
+                            <div className="logo"> <img className="jobcard-logo round-img" src={LogoImg} alt /></div>
                             {/* <Logo /> */}
                             <h2>Sr. Software Engineer</h2>
                             <h3>Elevated Acoustics</h3>
