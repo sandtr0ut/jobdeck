@@ -4,13 +4,29 @@ import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import Card from './Card';
 import { getProfiles } from '../../actions/profile';
+import API from '../../../../routes/api/jobCards'
 
 class Jobs extends Component {
-  state ={
+  state = {
     BackgroundImg: "",
-    
+    likedJobs: 0,
+  };
 
+  handleBtnClick = event => {
+    console.log(event)
+  };
+
+  loadNextJob = () =>{
+    API.getRandomJob()
+      .then(res => 
+        this.setState({
+          image:
+        }) )
   }
+
+
+
+
 }
 
 const Jobs = ({ getProfiles, profile: { profiles, loading } }) => {
@@ -24,23 +40,23 @@ const Jobs = ({ getProfiles, profile: { profiles, loading } }) => {
       {loading ? (
         <Spinner />
       ) : (
-        <Fragment>
-          <h1 className="large text-primary">Developers</h1>
-          <p className="lead">
-            <i className="fab fa-connectdevelop" /> Browse and connect with
-            developers
+          <Fragment>
+            <h1 className="large text-primary">Job Search</h1>
+            <p className="lead">
+              <i className="fab fa-connectdevelop" /> Browse and connect with
+              developers
           </p>
-          <div className="profiles">
-            {profiles.length > 0 ? (
-              profiles.map(profile => (
-                <Card key={profile._id} profile={profile} />
-              ))
-            ) : (
-              <h4>No profiles found...</h4>
-            )}
-          </div>
-        </Fragment>
-      )}
+            <div className="profiles">
+              {profiles.length > 0 ? (
+                profiles.map(profile => (
+                  <Card key={profile._id} profile={profile} />
+                ))
+              ) : (
+                  <h4>No profiles found...</h4>
+                )}
+            </div>
+          </Fragment>
+        )}
     </Fragment>
   );
 };

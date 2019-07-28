@@ -16,6 +16,7 @@ import NotFound from "../layout/NotFound";
 import PrivateRoute from "../routing/PrivateRoute";
 import Comregister from "../auth/Comregister";
 import CreateComProfile from "../profile-forms/CreateComProfile";
+import Card from "../jobcard/Card"
 
 const Routes = () => {
   return (
