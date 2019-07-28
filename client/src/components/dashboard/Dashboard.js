@@ -12,7 +12,7 @@ import DashboardAdminActions from './DashboardAdminActions';
 import Experience from './Experience';
 import Education from './Education';
 import { getCurrentProfile, deleteAccount } from '../../actions/profile';
-import ComAccounts from './ComAccounts';
+// import ComAccounts from './ComAccounts';
 
 // const Dashboard = props => {
 const Dashboard = ({
@@ -36,6 +36,8 @@ const Dashboard = ({
       {profile !== null ? (
         <Fragment>
           <DashboardActions />
+          {/* experience is the prop we pass into Experience.js 
+            set equal to the experience part of the profile STATE*/}
           <Experience experience={profile.experience} />
 
           <Education education={profile.education} />
@@ -46,7 +48,7 @@ const Dashboard = ({
             </button>
           </div>
 
-          <ComAccounts />
+          {/* <ComAccounts /> */}
           <DashboardAdminActions />
         </Fragment>
       ) : (
