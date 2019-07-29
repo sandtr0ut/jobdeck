@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import BackgroundImg from './demo-resources/imgs/nastuhabootalebiyWwob8kwOCkunsplash.jpg'
 import LogoImg from './demo-resources/imgs/logo.png'
 
+
 const Card = ({
     // cardContents: {
     //     jobTitle:,
@@ -21,8 +22,6 @@ const Card = ({
                     <div className="jobcard bg-light">
                         <div className="jobcard-img">
                             <img src={BackgroundImg} alt />
-
-
                         </div>
                         <div className="jobcard-content">
                             <div className="logo"> <img className="jobcard-logo round-img" src={LogoImg} alt /></div>
@@ -37,7 +36,7 @@ const Card = ({
                         <label htmlFor="toggle" className="btn btn-primary">
                             <i className="fas fa-arrow-circle-down fa-3x" />
                         </label>
-{/* 
+
                         <input id="toggleheart" className="toggle btn-primary" type="checkbox" />
                         <label htmlFor="toggleheart" className="btn btn-primary">
                             <i class="far fa-heart fa-5x"></i>
@@ -45,8 +44,7 @@ const Card = ({
                         <input id="toggleX" className="toggle btn-primary" type="checkbox" />
                         <label htmlFor="toggleX" className="btn btn-primary">
                             <i class="fas fa-times-circle fa-5x"></i>
-                        </label> */}
-
+                        </label>
                         <div className="expand">
                             <section>
                                 <h2>Example Job</h2>
@@ -58,7 +56,7 @@ const Card = ({
                                     dolor sit amet consectetur adipisicing elit. Quia dolor fugit adipisci nihil
                                     assumenda veritatis earum ea, tempora maxime nobis, obcaecati, vel hic sapiente! Vel
                                     labore fuga suscipit ullam voluptates.
-            </p>
+                                 </p>
                             </section>
                         </div>
                     </div>
