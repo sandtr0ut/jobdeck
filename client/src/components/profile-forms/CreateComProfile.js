@@ -8,7 +8,7 @@ import { createProfile, getCurrentProfile } from "../../actions/profile";
 const CreateProfile = ({ createProfile, history }) => {
   const [formData, setFormData] = useState({
     company: "",
-    hasCompany: "",
+    hasCompany: false,
     website: "",
     location: "",
     status: "",
@@ -68,13 +68,6 @@ const CreateProfile = ({ createProfile, history }) => {
           <select name="status" value={status} onChange={e => onChange(e)}>
             <option value="0">* Select Professional Status</option>
             <option value="Developer">Recruiter</option>
-            <option value="Junior Developer">Junior Developer</option>
-            <option value="Senior Developer">Senior Developer</option>
-            <option value="Manager">Manager</option>
-            <option value="Student or Learning">Student or Learning</option>
-            <option value="Instructor">Instructor or Teacher</option>
-            <option value="Intern">Intern</option>
-            <option value="Other">Other</option>
           </select>
           <small className="form-text">
             Give us an idea of where you are at in your career
@@ -87,7 +80,6 @@ const CreateProfile = ({ createProfile, history }) => {
             name="company"
             value={company}
             onChange={e => onChange(e)}
-            // {hasCompany={company !== "" ? hasCompany = true : console.log(hasCompany)}
           />
           <small className="form-text">
             Could be your own company or one you work for
@@ -224,7 +216,18 @@ const CreateProfile = ({ createProfile, history }) => {
         )}
 
         <input type="submit" className="btn btn-primary my-1" />
-        <a className="btn btn-light my-1" href="dashboard.html">
+        <a
+          className="btn btn-light my-1"
+          href="dashboard.html"
+          onClick={function hasCompany() {
+            if (company !== "") {
+              const [formData, setFormData] = onChange({ hasCompany: true });
+              console.log([formData, setFormData].hasCompany);
+            } else {
+              console.log("failed" + [formData, setFormData].hasCompany);
+            }
+          }}
+        >
           Go Back
         </a>
       </form>

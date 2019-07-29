@@ -54,6 +54,10 @@ const ComProfileSchema = new mongoose.Schema({
   date: {
     type: Date,
     default: Date.now
+  },
+  hasCompany: {
+    type: Boolean,
+    default: true;
   }
 });
 
