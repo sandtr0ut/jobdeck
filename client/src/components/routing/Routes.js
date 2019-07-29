@@ -16,7 +16,8 @@ import NotFound from "../layout/NotFound";
 import PrivateRoute from "../routing/PrivateRoute";
 import Comregister from "../auth/Comregister";
 import CreateComProfile from "../profile-forms/CreateComProfile";
-import Card from "../jobcard/Jobs"
+import Jobsearch from "../jobcard/Jobs"
+import Card from "../jobcard/Card"
 
 const Routes = () => {
   return (
@@ -26,6 +27,7 @@ const Routes = () => {
         <Route exact path="/register" component={Register} />
         <Route exact path="/comregister" component={Comregister} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/jobsearch" component={Jobsearch} />
         <Route exact path="/card" component={Card} />
         <Route exact path="/profiles" component={Profiles} />
         <Route exact path="/profile/:id" component={Profile} />
