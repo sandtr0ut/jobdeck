@@ -11,7 +11,7 @@ import DashboardActions from "./DashboardActions";
 import DashboardAdminActions from "./DashboardAdminActions";
 import Experience from "./Experience";
 import Education from "./Education";
-// import Company from "./Company";
+import Company from "./Company";
 import { getCurrentProfile, deleteAccount } from "../../actions/profile";
 // import ComAccounts from './ComAccounts';
 
@@ -43,7 +43,7 @@ const Dashboard = ({
 
           <Education education={profile.education} />
 
-          {/* <Company company={profile.com} /> */}
+          <Company com={profile.comprofile} />
 
           <div className="my-2">
             <button className="btn btn-danger" onClick={() => deleteAccount()}>

@@ -6,9 +6,9 @@ import { deleteComprofile } from "../../actions/profile";
 const Company = ({ com, deleteComprofile }) => {
   const coms = com.map(comp => (
     <tr key={comp.id}>
-      <td>{comp.company}</td>
-      <td className="hide-sm">{comp.title}</td>
-      <td />
+      <td>{comp.companyname}</td>
+      <td className="hide-sm">{comp.website}</td>
+      <td>{comp.location}</td>
 
       <td>
         <button
@@ -28,7 +28,7 @@ const Company = ({ com, deleteComprofile }) => {
         <thead>
           <tr>
             <th>Company</th>
-            <th className="hide-sm">Title</th>
+            <th className="hide-sm">Website</th>
             <th className="hide-sm">Location</th>
             <th />
           </tr>
