@@ -1,18 +1,18 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { addComProfile } from "../../actions/profile";
+import { deleteComprofile } from "../../actions/profile";
 
-const ComProfile = ({ com, addComProfile }) => {
-  const coms = com.map(com => (
-    <tr key={com.id}>
-      <td>{com.company}</td>
-      <td className="hide-sm">{com.title}</td>
+const Company = ({ com, deleteComprofile }) => {
+  const coms = com.map(comp => (
+    <tr key={comp.id}>
+      <td>{comp.company}</td>
+      <td className="hide-sm">{comp.title}</td>
       <td />
 
       <td>
         <button
-          onClick={() => addComProfile(com._id)}
+          onClick={() => deleteComprofile(comp._id)}
           className="btn btn-danger"
         >
           Delete
@@ -39,12 +39,12 @@ const ComProfile = ({ com, addComProfile }) => {
   );
 };
 
-ComProfile.propTypes = {
+Company.propTypes = {
   com: PropTypes.array.isRequired,
-  addComProfile: PropTypes.func.isRequired
+  deleteComprofile: PropTypes.func.isRequired
 };
 
 export default connect(
   null,
-  { addComProfile }
-)(ComProfile);
+  { deleteComprofile }
+)(Company);
