@@ -2,59 +2,61 @@ import React, { Fragment, useState } from "react";
 import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { addExperience } from "../../actions/profile";
+import { addComProfile } from "../../actions/profile";
 
-const AddExperience = ({ addExperience, history }) => {
+const AddComProfile = ({ addComProfile, history }) => {
   const [formData, setFormData] = useState({
-    company: "",
-    title: "",
+    companyname: "",
+    website: "",
     location: "",
-    from: "",
-    to: "",
-    current: false,
+    // tagline: "",
+    // industries: "",
     description: ""
   });
 
-  const [toDateDisabled, toggleDisabled] = useState(false);
-
-  const { company, title, location, from, to, current, description } = formData;
+  const {
+    companyname,
+    website,
+    location,
+    // tagline,
+    // industries,
+    description
+  } = formData;
 
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   return (
     <Fragment>
-      <h1 className="large text-primary">Add An Experience</h1>
+      <h1 className="large text-primary">Add a Company Profile</h1>
       <p className="lead">
-        <i className="fas fa-code-branch" /> Add any developer/programming
-        positions that you have had in the past
+        <i className="fas fa-code-branch" />
+        Add your companies details
       </p>
-      <small>* = required field</small>
+      <small>* = field</small>
       <form
         className="form"
         onSubmit={e => {
           e.preventDefault();
-          addExperience(formData, history);
+          addComProfile(formData, history);
         }}
       >
         <div className="form-group">
           <input
             type="text"
-            placeholder="* Job Title"
-            name="title"
-            value={title}
+            placeholder="* Company Name"
+            name="companyname"
+            value={companyname}
             onChange={e => onChange(e)}
-            required
           />
         </div>
         <div className="form-group">
           <input
             type="text"
-            placeholder="* Company"
-            name="company"
-            value={company}
+            placeholder="* Website i.e placeholder.com"
+            name="website"
+            value={website}
             onChange={e => onChange(e)}
-            required
           />
         </div>
         <div className="form-group">
@@ -66,40 +68,27 @@ const AddExperience = ({ addExperience, history }) => {
             onChange={e => onChange(e)}
           />
         </div>
-        <div className="form-group">
-          <h4>From Date</h4>
+
+        {/* <div className="form-group">
           <input
-            type="date"
-            name="from"
-            value={from}
+            type="text"
+            placeholder="Tagline"
+            name="Tagline"
+            value={tagline}
             onChange={e => onChange(e)}
           />
         </div>
+
         <div className="form-group">
-          <p>
-            <input
-              type="checkbox"
-              name="current"
-              checked={current}
-              value={current}
-              onChange={e => {
-                setFormData({ ...formData, current: !current });
-                toggleDisabled(!toDateDisabled);
-              }}
-            />{" "}
-            Current Job
-          </p>
-        </div>
-        <div className="form-group">
-          <h4>To Date</h4>
           <input
-            type="date"
-            name="to"
-            value={to}
+            type="text"
+            placeholder="Industry"
+            name="Tagline"
+            value={industries}
             onChange={e => onChange(e)}
-            disabled={toDateDisabled ? "disabled" : ""}
           />
-        </div>
+        </div> */}
+
         <div className="form-group">
           <textarea
             name="description"
@@ -119,11 +108,11 @@ const AddExperience = ({ addExperience, history }) => {
   );
 };
 
-AddExperience.propTypes = {
-  addExperience: PropTypes.func.isRequired
+AddComProfile.propTypes = {
+  addComProfile: PropTypes.func.isRequired
 };
 
 export default connect(
   null,
-  { addExperience }
-)(withRouter(AddExperience));
+  { addComProfile }
+)(withRouter(AddComProfile));

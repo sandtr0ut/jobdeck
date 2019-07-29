@@ -12,6 +12,9 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         <Link to="/profiles">Developers</Link>
       </li>
       <li>
+        <Link to="/comprofiles">Companies</Link>
+      </li>
+      <li>
         <Link to="/posts">Posts</Link>
       </li>
       <li>
@@ -19,6 +22,13 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           <i className="fas fa-user" />{' '}
           <span className="hide-sm">Dashboard</span>
         </Link>
+      </li>
+      <li>
+        <Link to="/comregister">Register Company</Link>
+      </li>
+
+      <li>
+        <Link to="/jobposts">Job-Posts</Link>
       </li>
       <li>
         <a onClick={logout} href="#!">
@@ -33,6 +43,10 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       <li>
         <Link to="/profiles">Developers</Link>
       </li>
+      <li>
+        <Link to="/comprofiles">Companies</Link>
+      </li>
+
       <li>
         <Link to="/register">Register</Link>
       </li>
