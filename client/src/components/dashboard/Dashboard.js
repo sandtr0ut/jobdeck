@@ -2,15 +2,18 @@
 // bring it in from the Redux state, and
 // pass it down to other components
 
-import React, { Fragment, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import Spinner from '../layout/Spinner';
-import DashboardActions from './DashboardActions';
-import Experience from './Experience';
-import Education from './Education';
-import { getCurrentProfile, deleteAccount } from '../../actions/profile';
+import React, { Fragment, useEffect } from "react";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import Spinner from "../layout/Spinner";
+import DashboardActions from "./DashboardActions";
+import DashboardAdminActions from "./DashboardAdminActions";
+import Experience from "./Experience";
+import Education from "./Education";
+// import Company from "./Company";
+import { getCurrentProfile, deleteAccount } from "../../actions/profile";
+// import ComAccounts from './ComAccounts';
 
 // const Dashboard = props => {
 const Dashboard = ({
@@ -34,21 +37,32 @@ const Dashboard = ({
       {profile !== null ? (
         <Fragment>
           <DashboardActions />
+          {/* experience is the prop we pass into Experience.js 
+            set equal to the experience part of the profile STATE*/}
           <Experience experience={profile.experience} />
 
           <Education education={profile.education} />
+
+          {/* <Company company={profile.com} /> */}
 
           <div className="my-2">
             <button className="btn btn-danger" onClick={() => deleteAccount()}>
               <i className="fas fa-user-minus" /> Delete My Account
             </button>
           </div>
+
+          {/* <ComAccounts /> */}
+          <DashboardAdminActions />
         </Fragment>
       ) : (
         <Fragment>
           <p>You have not yet setup a profile, please add some info</p>
           <Link to="/create-profile" className="btn btn-primary my-1">
-            Create Profile
+            Create Individual Profile
+          </Link>
+          {/* Update Route */}
+          <Link to="/add-comprofile" className="btn btn-secondary my-1">
+            Create Company Profile
           </Link>
         </Fragment>
       )}

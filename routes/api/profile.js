@@ -3,7 +3,7 @@ const request = require("request");
 const config = require("config");
 const router = express.Router();
 const auth = require("../../middleware/auth");
-const { check, validationResult } = require("express-validator");
+const { check, validationResult } = require("express-validator/check");
 
 const Profile = require("../../models/Profile");
 const User = require("../../models/User");
@@ -167,6 +167,130 @@ router.delete("/", auth, async (req, res) => {
   }
 });
 
+// @route    PUT api/profile/comprofile
+// @desc     Add company profile
+// @access   Private
+router.put(
+  "/comprofile",
+  [
+    auth,
+    [
+      check("companyname", "Company name is required")
+        .not()
+        .isEmpty(),
+      check("location", "Location is required")
+        .not()
+        .isEmpty(),
+      check("description", "Description is required")
+        .not()
+        .isEmpty()
+    ]
+  ],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    const {
+      companyname,
+      website,
+      location,
+      address,
+      tagline,
+      industries,
+      description
+    } = req.body;
+
+    const newCP = {
+      companyname,
+      website,
+      location,
+      address,
+      tagline,
+      industries,
+      description
+    };
+
+    try {
+      const profile = await Profile.findOne({ user: req.user.id });
+
+      profile.comprofile.unshift(newCP);
+
+      await profile.save();
+
+      res.json(profile);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send("Server Error");
+    }
+  }
+);
+
+// @route    PUT api/profile/jobpost
+// @desc     Add job post
+// @access   Private
+router.put(
+  "/jobpost",
+  [
+    auth,
+    [
+      check("jobTitle", "Job title is required")
+        .not()
+        .isEmpty(),
+      check("companyName", "Company name is required")
+        .not()
+        .isEmpty(),
+      check("jobDescription", "Job description is required")
+        .not()
+        .isEmpty()
+    ]
+  ],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    const {
+      jobTitle,
+      companyName,
+      workLocation,
+      jobDescription,
+      jobType,
+      desiredExperience,
+      salary,
+      keySkills,
+      posted
+    } = req.body;
+
+    const newJob = {
+      jobTitle,
+      companyName,
+      workLocation,
+      jobDescription,
+      jobType,
+      desiredExperience,
+      salary,
+      keySkills,
+      posted
+    };
+
+    try {
+      const profile = await Profile.findOne({ user: req.user.id });
+
+      profile.jobpost.unshift(newJob);
+
+      await profile.save();
+
+      res.json(profile);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send("Server Error");
+    }
+  }
+);
+
 // @route    PUT api/profile/experience
 // @desc     Add profile experience
 // @access   Private
@@ -267,6 +391,34 @@ router.delete("/experience/:exp_id", auth, async (req, res) => {
       foundProfile.experience.splice(removeIndex, 1);
       await foundProfile.save();
       return res.status(200).json(foundProfile);
+    }
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ msg: "Server error" });
+  }
+});
+
+// @route    DELETE api/profile/comprofile/:comp_id
+// @desc     Delete comprofile from profile
+// @access   Private
+
+router.delete("/comprofile/:comp_id", auth, async (req, res) => {
+  try {
+    const foundComProfile = await Profile.findOne({ user: req.user.id });
+    const compIds = foundComProfile.comprofile.map(comp => comp._id.toString());
+    // if i dont add .toString() it returns this weird mongoose coreArray and the ids are somehow objects and it still deletes anyway even if you put /experience/5
+    const removeIndex = compIds.indexOf(req.params.exp_id);
+    if (removeIndex === -1) {
+      return res.status(500).json({ msg: "Server error" });
+    } else {
+      // theses console logs helped me figure it out
+      console.log("compIds", compIds);
+      console.log("typeof compIds", typeof compIds);
+      console.log("req.params", req.params);
+      console.log("removed", compIds.indexOf(req.params.comp_id));
+      foundComProfile.comprofile.splice(removeIndex, 1);
+      await foundComProfile.save();
+      return res.status(200).json(foundComProfile);
     }
   } catch (error) {
     console.error(error);

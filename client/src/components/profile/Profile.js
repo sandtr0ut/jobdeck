@@ -29,6 +29,7 @@ const Profile = ({
           <Link to="/profiles" className="btn btn-light">
             Back To Profiles
           </Link>
+          {/* Only show 'edit profile' link if user is authenticated and their id matches the user._id associated with the profile */}
           {auth.isAuthenticated &&
             auth.loading === false &&
             auth.user._id === profile.user._id && (
