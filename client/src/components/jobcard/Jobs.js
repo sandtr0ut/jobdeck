@@ -41,7 +41,7 @@ const Jobs = ({ getProfiles, profile: { profiles, loading } }) => {
         <Spinner />
       ) : (
           <Fragment>
-            <h1 className="large text-primary">Job Search</h1>
+            <h1 className="large text-primary"></h1>
             <p className="lead">
               <i className="fab fa-connectdevelop" /> Browse and connect with
               developers
