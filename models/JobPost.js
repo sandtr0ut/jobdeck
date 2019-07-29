@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-​
 const JobPostSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
@@ -39,5 +38,5 @@ const JobPostSchema = new Schema({
     default: Date.now
   }
 });
-​
+
 module.exports = JobPost = mongoose.model('jobpost', JobPostSchema);

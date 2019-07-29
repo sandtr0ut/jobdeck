@@ -1,5 +1,5 @@
 {
-  "mongoURI": "mongodb+srv://test1:test1@passport-test-obpjj.mongodb.net/test?retryWrites=true&w=majority",
+  "mongoURI": "mongodb+srv://sandtr0ut:gcro6636@cluster0-azhuz.mongodb.net/test?retryWrites=true&w=majority",
   "jwtSecret": "secret",
   "githubClientId": "",
   "githubSecret": ""

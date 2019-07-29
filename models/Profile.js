@@ -57,6 +57,23 @@ const ProfileSchema = new mongoose.Schema({
       },
       description: {
         type: String
+      },
+      comsocial: {
+        youtube: {
+          type: String
+        },
+        twitter: {
+          type: String
+        },
+        facebook: {
+          type: String
+        },
+        linkedin: {
+          type: String
+        },
+        instagram: {
+          type: String
+        }
       }
     }
   ],
@@ -107,6 +124,63 @@ const ProfileSchema = new mongoose.Schema({
       type: String
     }
   },
+  comprofile: [
+    {
+      companyname: {
+        type: String
+      },
+      website: {
+        type: String
+      },
+      location: {
+        type: String
+      },
+      address: {
+        type: String
+      },
+      tagline: {
+        type: String
+      },
+      industries: {
+        type: [String]
+      },
+      description: {
+        type: String
+      }
+    }
+  ],
+  jobpost: [
+    {
+      jobTitle: {
+        type: String
+      },
+      companyName: {
+        type: String
+      },
+      workLocation: {
+        type: String
+      },
+      jobDescription: {
+        type: String
+      },
+      jobType: {
+        type: String
+      },
+      desiredExperience: {
+        type: String
+      },
+      salary: {
+        type: String
+      },
+      keySkills: {
+        type: [String]
+      },
+      posted: {
+        type: Date,
+        default: Date.now
+      }
+    }
+  ],
   date: {
     type: Date,
     default: Date.now
