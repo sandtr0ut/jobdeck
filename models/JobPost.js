@@ -1,55 +1,43 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
+​
 const JobPostSchema = new Schema({
-  comapany: {
+  user: {
     type: Schema.Types.ObjectId,
-    ref: "users"
+    ref: 'comprofile'
   },
-  text: {
+  jobTitle: {
     type: String,
     required: true
   },
-  name: {
+  nameDisplayed: {
+    type: Boolean,
+    required: true
+  },
+  workLocation: {
+    type: String,
+    required: true
+  },
+  jobDescription: {
+    type: String,
+    required: true
+  },
+  jobType: {
     type: String
   },
-  avatar: {
+  desiredExperience: {
     type: String
   },
-  likes: [
-    {
-      user: {
-        type: Schema.Types.ObjectId,
-        ref: "users"
-      }
-    }
-  ],
-  comments: [
-    {
-      user: {
-        type: Schema.Types.ObjectId,
-        ref: "users"
-      },
-      text: {
-        type: String,
-        required: true
-      },
-      name: {
-        type: String
-      },
-      avatar: {
-        type: String
-      },
-      date: {
-        type: Date,
-        default: Date.now
-      }
-    }
-  ],
-  date: {
+  salary: {
+    type: String
+  },
+  keySkills: {
+    type: [String]
+  },
+  posted: {
     type: Date,
     default: Date.now
   }
 });
-
-module.exports = Post = mongoose.model("job-post", JobPostSchema);
+​
+module.exports = JobPost = mongoose.model('jobpost', JobPostSchema);
