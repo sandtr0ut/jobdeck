@@ -1,11 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 // TODO:  Update Routes
 const DashboardAdminActions = () => {
   return (
     <div className="dash-buttons">
-      <Link to="/edit-profile" className="btn btn-light">
+      <Link to="/add-comprofile" className="btn btn-light">
         <i className="fas fa-user-circle text-primary" /> Create/Edit Company
         Profile
       </Link>

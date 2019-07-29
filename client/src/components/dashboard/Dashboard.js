@@ -2,16 +2,17 @@
 // bring it in from the Redux state, and
 // pass it down to other components
 
-import React, { Fragment, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import Spinner from '../layout/Spinner';
-import DashboardActions from './DashboardActions';
-import DashboardAdminActions from './DashboardAdminActions';
-import Experience from './Experience';
-import Education from './Education';
-import { getCurrentProfile, deleteAccount } from '../../actions/profile';
+import React, { Fragment, useEffect } from "react";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import Spinner from "../layout/Spinner";
+import DashboardActions from "./DashboardActions";
+import DashboardAdminActions from "./DashboardAdminActions";
+import Experience from "./Experience";
+import Education from "./Education";
+// import ComProfile from "./Company";
+import { getCurrentProfile, deleteAccount } from "../../actions/profile";
 // import ComAccounts from './ComAccounts';
 
 // const Dashboard = props => {
@@ -42,6 +43,8 @@ const Dashboard = ({
 
           <Education education={profile.education} />
 
+          {/* <ComProfile company={profile.com} /> */}
+
           <div className="my-2">
             <button className="btn btn-danger" onClick={() => deleteAccount()}>
               <i className="fas fa-user-minus" /> Delete My Account
@@ -58,7 +61,7 @@ const Dashboard = ({
             Create Individual Profile
           </Link>
           {/* Update Route */}
-          <Link to="/create-profile" className="btn btn-secondary my-1">
+          <Link to="/add-comprofile" className="btn btn-secondary my-1">
             Create Company Profile
           </Link>
         </Fragment>

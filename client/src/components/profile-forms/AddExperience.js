@@ -1,18 +1,18 @@
-import React, { Fragment, useState } from 'react';
-import { Link, withRouter } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { addExperience } from '../../actions/profile';
+import React, { Fragment, useState } from "react";
+import { Link, withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { addExperience } from "../../actions/profile";
 
 const AddExperience = ({ addExperience, history }) => {
   const [formData, setFormData] = useState({
-    company: '',
-    title: '',
-    location: '',
-    from: '',
-    to: '',
+    company: "",
+    title: "",
+    location: "",
+    from: "",
+    to: "",
     current: false,
-    description: ''
+    description: ""
   });
 
   const [toDateDisabled, toggleDisabled] = useState(false);
@@ -86,7 +86,7 @@ const AddExperience = ({ addExperience, history }) => {
                 setFormData({ ...formData, current: !current });
                 toggleDisabled(!toDateDisabled);
               }}
-            />{' '}
+            />{" "}
             Current Job
           </p>
         </div>
@@ -97,7 +97,7 @@ const AddExperience = ({ addExperience, history }) => {
             name="to"
             value={to}
             onChange={e => onChange(e)}
-            disabled={toDateDisabled ? 'disabled' : ''}
+            disabled={toDateDisabled ? "disabled" : ""}
           />
         </div>
         <div className="form-group">
@@ -111,7 +111,7 @@ const AddExperience = ({ addExperience, history }) => {
           />
         </div>
         <input type="submit" className="btn btn-primary my-1" />
-        <Link className="btn btn-light my-1" href="dashboard.html">
+        <Link className="btn btn-light my-1" to="/dashboard">
           Go Back
         </Link>
       </form>
