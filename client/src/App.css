@@ -830,11 +830,36 @@ tbody {
   /* content: "+"; */
   /* transform: rotate(180deg) */
 }
-#toggle:checked ~ label  i {
+#toggle:checked ~ label  .fa-arrow-circle-down {
   align-content: center;
   /* content: "+"; */
   transform: rotate(180deg)
 }
+#toggleheart:checked ~.heartbtn {
+  align-content: center;
+  
+  
+
+  background: linear-gradient(to right, limegreen 50%, red 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .5s ease-out;
+}
+#toggleX:checked ~.Xbtn {
+  align-content: center;
+  
+  
+
+  background: linear-gradient(to right, limegreen 50%, red 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .5s ease-out;
+  
+
+}
+
+
+
 
 input[type='checkbox'] {
   display: none;
