@@ -13,6 +13,10 @@ const JobPostSchema = new Schema({
     type: Boolean,
     required: true
   },
+  companyName: {
+    type: Boolean,
+    required: true
+  },
   workLocation: {
     type: String,
     required: true

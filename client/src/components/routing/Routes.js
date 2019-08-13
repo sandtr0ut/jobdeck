@@ -19,7 +19,8 @@ import Profile from "../profile/Profile";
 import Posts from "../posts/Posts";
 import Post from "../post/Post";
 import Card from "../jobcard/Card";
-import Jobsearch from "../jobcard/Jobs";
+// import Jobsearch from "../jobcard/Jobs";
+import Jobsearch from "../jobcard/DynamicJobs";
 import NotFound from "../layout/NotFound";
 import PrivateRoute from "../routing/PrivateRoute";
 
