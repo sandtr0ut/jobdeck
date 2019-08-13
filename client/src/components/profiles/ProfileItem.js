@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const ProfileItem = ({
   profile: {
@@ -8,7 +8,8 @@ const ProfileItem = ({
     status,
     company,
     location,
-    skills
+    skills,
+    experience
   }
 }) => {
   return (
@@ -30,8 +31,16 @@ const ProfileItem = ({
       <ul>
         {/* need to use index as a key for .map() since skills is just and array of words */}
         {skills.slice(0, 4).map((skill, index) => (
-          <li key={index} className="text-primary">
+          <li key={index} className="text-light">
             <i className="fas fa-check" /> {skill}
+          </li>
+        ))}
+      </ul>
+      <ul>
+        {/* need to use index as a key for .map() since skills is just and array of words */}
+        {experience.map(exp => (
+          <li key={exp.id} className="text-light">
+            {exp.title}
           </li>
         ))}
       </ul>
@@ -40,7 +49,8 @@ const ProfileItem = ({
 };
 
 ProfileItem.propTypes = {
-  profile: PropTypes.object.isRequired
+  profile: PropTypes.object.isRequired,
+  experience: PropTypes.array.isRequired
 };
 
 export default ProfileItem;

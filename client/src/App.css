@@ -74,6 +74,10 @@ img {
   color: var(--dark-color);
 }
 
+.text-light {
+    color: var(--light-color)
+}
+
 /* Padding */
 .p {
   padding: 0.5rem;
@@ -679,7 +683,7 @@ label:hover i{
 }
 
 .btn-primary {
-  background-color: lime;
+  background-color: rgb(9, 82, 9);
   color: white;
 }
 
