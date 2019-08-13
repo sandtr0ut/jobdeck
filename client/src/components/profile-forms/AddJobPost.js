@@ -1,23 +1,33 @@
-import React, { Fragment, useState } from "react";
-import { Link, withRouter } from "react-router-dom";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { addExperience } from "../../actions/profile";
+import React, { Fragment, useState } from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { addJobPost } from '../../actions/profile';
 
-const AddExperience = ({ addExperience, history }) => {
+const AddJobPost = ({ addJobPost, history }) => {
   const [formData, setFormData] = useState({
-    company: "",
-    title: "",
-    location: "",
-    from: "",
-    to: "",
-    current: false,
-    description: ""
+    jobTitle: '',
+    companyName: '',
+    workLocation: '',
+    jobDescription: '',
+    jobType: '',
+    desiredExperience: '',
+    salary: '',
+    keySkills: '',
+    posted: ''
   });
 
-  const [toDateDisabled, toggleDisabled] = useState(false);
-
-  const { company, title, location, from, to, current, description } = formData;
+  const {
+    jobTitle,
+    companyName,
+    workLocation,
+    jobDescription,
+    jobType,
+    desiredExperience,
+    salary,
+    keySkills,
+    posted
+  } = formData;
 
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -33,15 +43,15 @@ const AddExperience = ({ addExperience, history }) => {
         className="form"
         onSubmit={e => {
           e.preventDefault();
-          addExperience(formData, history);
+          addJobPost(formData, history);
         }}
       >
         <div className="form-group">
           <input
             type="text"
             placeholder="* Job Title"
-            name="title"
-            value={title}
+            name="jobTitle"
+            value={jobTitle}
             onChange={e => onChange(e)}
             required
           />
@@ -49,9 +59,9 @@ const AddExperience = ({ addExperience, history }) => {
         <div className="form-group">
           <input
             type="text"
-            placeholder="* Company"
-            name="company"
-            value={company}
+            placeholder="* Company Name"
+            name="companyName"
+            value={companyName}
             onChange={e => onChange(e)}
             required
           />
@@ -59,53 +69,65 @@ const AddExperience = ({ addExperience, history }) => {
         <div className="form-group">
           <input
             type="text"
-            placeholder="Location"
-            name="location"
-            value={location}
+            placeholder="* Work Location"
+            name="workLocation"
+            value={workLocation}
             onChange={e => onChange(e)}
-          />
-        </div>
-        <div className="form-group">
-          <h4>Estimated Start Time</h4>
-          <input
-            type="date"
-            name="from"
-            value={from}
-            onChange={e => onChange(e)}
-          />
-        </div>
-        <div className="form-group">
-          <p>
-            <input
-              type="checkbox"
-              name="current"
-              checked={current}
-              value={current}
-              onChange={e => {
-                setFormData({ ...formData, current: !current });
-                toggleDisabled(!toDateDisabled);
-              }}
-            />{" "}
-            Current Job
-          </p>
-        </div>
-        <div className="form-group">
-          <h4>Seasonal, Internship, Stable?</h4>
-          <input
-            type="date"
-            name="to"
-            value={to}
-            onChange={e => onChange(e)}
-            disabled={toDateDisabled ? "disabled" : ""}
+            required
           />
         </div>
         <div className="form-group">
           <textarea
-            name="description"
+            type="text"
+            placeholder="Job Description"
+            name="jobDescription"
             cols="30"
             rows="5"
-            placeholder="Job Description"
-            value={description}
+            value={jobDescription}
+            onChange={e => onChange(e)}
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="Job Type"
+            name="jobType"
+            value={jobType}
+            onChange={e => onChange(e)}
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="Desired Experience"
+            name="desiredExperience"
+            value={desiredExperience}
+            onChange={e => onChange(e)}
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="Salary/Salary-Range"
+            name="salary"
+            value={salary}
+            onChange={e => onChange(e)}
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="Key Skills"
+            name="keySkills"
+            value={keySkills}
+            onChange={e => onChange(e)}
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="date"
+            name="posted"
+            value={posted}
             onChange={e => onChange(e)}
           />
         </div>
@@ -118,11 +140,11 @@ const AddExperience = ({ addExperience, history }) => {
   );
 };
 
-AddExperience.propTypes = {
-  addExperience: PropTypes.func.isRequired
+AddJobPost.propTypes = {
+  addJobPost: PropTypes.func.isRequired
 };
 
 export default connect(
   null,
-  { addExperience }
-)(withRouter(AddExperience));
+  { addJobPost }
+)(withRouter(AddJobPost));
