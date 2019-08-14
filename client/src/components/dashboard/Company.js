@@ -1,7 +1,7 @@
-import React, { Fragment } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { deleteComprofile } from "../../actions/profile";
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { deleteComprofile } from '../../actions/profile';
 
 const Company = ({ com, deleteComprofile }) => {
   const coms = com.map(comp => (
@@ -13,7 +13,7 @@ const Company = ({ com, deleteComprofile }) => {
       <td>
         <button
           onClick={() => deleteComprofile(comp._id)}
-          className="btn btn-danger"
+          className="btn-isSmall btn-danger"
         >
           Delete
         </button>
@@ -23,13 +23,13 @@ const Company = ({ com, deleteComprofile }) => {
 
   return (
     <Fragment>
-      <h2 className="my-2">Company</h2>
+      <h2 className="mt-2 mb"> Business Profile(s)</h2>
       <table className="table">
         <thead>
           <tr>
             <th>Company</th>
             <th className="hide-sm">Website</th>
-            <th className="hide-sm">Location</th>
+            <th>Location</th>
             <th />
           </tr>
         </thead>

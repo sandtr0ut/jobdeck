@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 // import { connect } from 'react-redux';
 // import CardBtn from './CardButton';
@@ -7,79 +7,84 @@ import LogoImg from './demo-resources/imgs/logo.png';
 
 const Card = ({ profile: { jobpost } }) => {
   return (
-    <div className="container">
-      {jobpost.map(job => (
-        <div className="lead" key={job.id}>
-          <div className="card">
-            <div className="jobcard bg-light">
-              <div className="jobcard-img">
-                <img src={BackgroundImg} alt="" />
-              </div>
-              <div className="jobcard-content">
-                <div className="logo">
-                  {' '}
-                  <img
-                    className="jobcard-logo round-img"
-                    src={LogoImg}
-                    alt=""
-                  />
+    <Fragment>
+      {jobpost.map((job, index) => (
+        <div key={job.id} className="container">
+          <div className="lead">
+            <div className="card">
+              <div className="jobcard bg-light">
+                <div className="jobcard-img">
+                  <img src={BackgroundImg} alt="" />
                 </div>
-                {/* <Logo /> */}
-                <h2>{job.jobTitle}</h2>
-                <h3>{job.companyName}</h3>
-                <h3>{job.salary}</h3>
-                <p className="my-1">
-                  <span>{job.workLocation}</span>
-                </p>
-              </div>
-              <div>
-                {/* <a class="btn btn-primary" type="checkbox" onclick="expand()">View Profile</a> */}
-                <input
-                  id="toggle"
-                  className="toggle btn-primary"
-                  type="checkbox"
-                />
-                <label htmlFor="toggle" className="btn btn-primary">
-                  <i className="fas fa-arrow-circle-down fa-4x" />
-                </label>
+                <div className="jobcard-content">
+                  <div className="logo">
+                    {' '}
+                    <img
+                      className="jobcard-logo round-img"
+                      src={LogoImg}
+                      alt=""
+                    />
+                  </div>
+                  {/* <Logo /> */}
+                  <h2 className="ml-2">{job.jobTitle}</h2>
+                  <h3 className="ml-2">{job.companyName}</h3>
+                  <h3 className="ml-2">{job.salary}</h3>
+                  <p className="my-1 ml-2">
+                    <span>{job.workLocation}</span>
+                  </p>
+                </div>
+                <div>
+                  {/* <a class="btn btn-primary" type="checkbox" onclick="expand()">View Profile</a> */}
+                  <input
+                    id={'toggle' + index}
+                    className="toggle btn-primary"
+                    type="checkbox"
+                  />
+                  <label htmlFor={'toggle' + index} className="btn btn-primary">
+                    <i className="fas fa-arrow-circle-down fa-4x" />
+                  </label>
 
-                <input
-                  id="toggleheart"
-                  className="toggle toggleheart btn-primary"
-                  type="checkbox"
-                />
-                <label
-                  htmlFor="toggleheart"
-                  className="btn heartbtn btn-primary"
-                >
-                  <i className="far fa-heart fa-4x" />
-                </label>
-                <input
-                  id="toggleX"
-                  className="toggle toggleX btn-primary"
-                  type="checkbox"
-                />
-                <label htmlFor="toggleX" className="btn Xbtn btn-primary">
-                  <i className="fas fa-times-circle fa-4x" />
-                </label>
+                  <input
+                    id={'toggleheart' + index}
+                    className="toggle toggleheart btn-light"
+                    type="checkbox"
+                  />
+                  <label
+                    htmlFor={'toggleheart' + index}
+                    className="btn heartbtn btn-light"
+                  >
+                    <i className="far fa-heart fa-4x" />
+                  </label>
+                  <input
+                    id={'toggleX' + index}
+                    className="toggle toggleX btn-primary"
+                    type="checkbox"
+                  />
+                  <label
+                    htmlFor={'toggleX' + index}
+                    className="btn Xbtn btn-primary"
+                  >
+                    <i className="fas fa-times-circle fa-4x" />
+                  </label>
 
-                <div className="expand">
-                  <section>
-                    <h2>Title: {job.jobTitle}</h2>
-                    <h3>Type: {job.jobType}</h3>
-                    <h3>Job Description:</h3>
-                    <p>{job.jobDescription}</p>
-                    <h3>Desired Experience:</h3>
-                    <p>{job.desiredExperience}</p>
-                    <h3>Key Skills: {job.keySkills}</h3>
-                  </section>
+                  <div className="expand">
+                    <section>
+                      <h2>Title: {job.jobTitle}</h2>
+                      <h3>Type: {job.jobType}</h3>
+                      <h3>Job Description:</h3>
+                      <p>{job.jobDescription}</p>
+                      <h3>Desired Experience:</h3>
+                      <p>{job.desiredExperience}</p>
+                      <h3>Key Skills: {job.keySkills}</h3>
+                    </section>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       ))}
-    </div>
+    </Fragment>
   );
 };
 

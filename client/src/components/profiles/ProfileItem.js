@@ -8,8 +8,7 @@ const ProfileItem = ({
     status,
     company,
     location,
-    skills,
-    experience
+    skills
   }
 }) => {
   return (
@@ -36,21 +35,12 @@ const ProfileItem = ({
           </li>
         ))}
       </ul>
-      <ul>
-        {/* need to use index as a key for .map() since skills is just and array of words */}
-        {experience.map(exp => (
-          <li key={exp.id} className="text-light">
-            {exp.title}
-          </li>
-        ))}
-      </ul>
     </div>
   );
 };
 
 ProfileItem.propTypes = {
-  profile: PropTypes.object.isRequired,
-  experience: PropTypes.array.isRequired
+  profile: PropTypes.object.isRequired
 };
 
 export default ProfileItem;
