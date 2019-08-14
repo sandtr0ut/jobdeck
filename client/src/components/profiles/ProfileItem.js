@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const ProfileItem = ({
   profile: {
@@ -30,7 +30,7 @@ const ProfileItem = ({
       <ul>
         {/* need to use index as a key for .map() since skills is just and array of words */}
         {skills.slice(0, 4).map((skill, index) => (
-          <li key={index} className="text-primary">
+          <li key={index} className="text-light">
             <i className="fas fa-check" /> {skill}
           </li>
         ))}

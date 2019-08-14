@@ -74,6 +74,10 @@ img {
   color: var(--dark-color);
 }
 
+.text-light {
+    color: var(--light-color)
+}
+
 /* Padding */
 .p {
   padding: 0.5rem;
@@ -125,6 +129,79 @@ img {
 .my-3 {
   margin: 3rem 0;
 }
+.mx {
+  margin: 0 0.5rem;
+}
+.mx-1 {
+  margin: 0 1rem;
+}
+.mx-2 {
+  margin: 0 2rem;
+}
+.mx-3 {
+  margin: 0 3rem;
+}
+.mt {
+    margin-top: 0.5rem;
+}
+.mt-1 {
+    margin-top: 1rem;
+}
+.mt-2 {
+    margin-top: 2rem;
+}
+.mt-3 {
+    margin-top: 3rem;
+}
+.mt-4 {
+    margin-top: 4rem;
+}
+.mr {
+    margin-right: 0.5rem;
+}
+.mr-1 {
+    margin-right: 1rem;
+}
+.mr-2 {
+    margin-right: 2rem;
+}
+.mr-3 {
+    margin-right: 3rem;
+}
+.mr-4 {
+    margin-right: 4rem;
+}
+.mb {
+    margin-bottom: 0.5rem;
+}
+.mb-1 {
+    margin-bottom: 1rem;
+}
+.mb-2 {
+    margin-bottom: 2rem;
+}
+.mb-3 {
+    margin-bottom: 3rem;
+}
+.mb-4 {
+    margin-bottom: 4rem;
+}
+.ml {
+    margin-left: 0.5rem;
+}
+.ml-1 {
+    margin-left: 1rem;
+}
+.ml-2 {
+    margin-left: 2rem;
+}
+.ml-3 {
+    margin-left: 3rem;
+}
+.ml-4 {
+    margin-left: 4rem;
+}
+
 
 .btn {
   display: inline-block;
@@ -138,7 +215,19 @@ img {
   transition: opacity 0.2s ease-in;
   outline: none;
   border-radius: 2%;
-  
+}
+.btn-isSmall {
+  display: inline-block;
+  background: var(--light-color);
+  color: #333;
+  padding: 0.2rem .7rem;
+  font-size: .9rem;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+  border-radius: 2%;
 }
 
 .badge {
@@ -317,6 +406,7 @@ button {
 
 .navbar ul {
   display: flex;
+  flex-flow: row wrap
 }
 
 .navbar a {
@@ -679,7 +769,7 @@ label:hover i{
 }
 
 .btn-primary {
-  background-color: lime;
+  background-color: rgb(9, 82, 9);
   color: white;
 }
 
@@ -695,7 +785,7 @@ label:hover i{
 
 .jobcard-img{
   width: 100%;
- max-height: 115pt;
+  max-height: 115pt;
   align-items: stretch;
 }
 .jobcard-content{
@@ -815,37 +905,55 @@ tbody {
   font-size: 14pt;
   transition: linear
 }
-#toggle:checked ~ .expand {
+#toggle0:checked ~ .expand,
+#toggle1:checked ~ .expand,
+#toggle2:checked ~ .expand,
+#toggle3:checked ~ .expand {
   height: 650px;
   visibility: visible;
   
 }
-#toggle:checked ~ label::after {
+#toggle0:checked ~ label::after,
+#toggle1:checked ~ label::after,
+#toggle2:checked ~ label::after,
+#toggle3:checked ~ label::after {
   align-content: center;
   /* content: "-"; */
   /* transform: rotate(4deg) */
 }
-#toggle:checked ~ label {
+#toggle0:checked ~ label,
+#toggle1:checked ~ label,
+#toggle2:checked ~ label,
+#toggle3:checked ~ label {
   align-content: center;
   /* content: "+"; */
   /* transform: rotate(180deg) */
 }
-#toggle:checked ~ label  .fa-arrow-circle-down {
+#toggle0:checked ~ label  .fa-arrow-circle-down,
+#toggle1:checked ~ label  .fa-arrow-circle-down,
+#toggle2:checked ~ label  .fa-arrow-circle-down,
+#toggle3:checked ~ label  .fa-arrow-circle-down {
   align-content: center;
   /* content: "+"; */
   transform: rotate(180deg)
 }
-#toggleheart:checked ~.heartbtn {
+#toggleheart0:checked ~.heartbtn,
+#toggleheart1:checked ~.heartbtn,
+#toggleheart2:checked ~.heartbtn,
+#toggleheart3:checked ~.heartbtn {
   align-content: center;
   
   
 
-  background: linear-gradient(to right, limegreen 50%, red 50%);
+  background: linear-gradient(to right, red 50%, limegreen 50%);
   background-size: 200% 100%;
   background-position: right bottom;
   transition: all .5s ease-out;
 }
-#toggleX:checked ~.Xbtn {
+#toggleX0:checked ~.Xbtn,
+#toggleX1:checked ~.Xbtn,
+#toggleX2:checked ~.Xbtn,
+#toggleX3:checked ~.Xbtn {
   align-content: center;
   
   
