@@ -29,7 +29,7 @@ jobDeck was created using React, Redux, MongoDB, Express, NodeJS, and Google Fir
 
 ![landing page](readmeMisc/landingPage.png)
 
-You can link to our hosted application here: 
+You can link to our hosted application here: https://agile-wave-75051.herokuapp.com/
 
 After arriving at the landing page, feel free to create your login account.
 
