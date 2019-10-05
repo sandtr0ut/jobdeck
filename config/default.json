@@ -1,5 +1,5 @@
 {
-    "mongoURI": "mongodb+srv://sandtr0ut:gcro6636@nextcluster-azhuz.mongodb.net/test?retryWrites=true&w=majority",
+    "mongoURI": "mongodb+srv://sandtr0ut:gcro6636@cluster0-azhuz.mongodb.net/admin?retryWrites=true&w=majority",
     "jwtSecret": "secret",
     "githubClientId": "",
     "githubSecret": ""
